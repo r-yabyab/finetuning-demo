@@ -1,0 +1,7 @@
+https://github.com/mistralai/mistral-finetune?tab=readme-ov-file
+
+
+
+ERROR: Could not find a version that satisfies the requirement triton==2.2 (from versions: none)
+ERROR: No matching distribution found for triton==2.2
+(finetuning-demo) PS \mistral-finetune> pip install Triton-windows
