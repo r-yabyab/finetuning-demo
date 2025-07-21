@@ -1,14 +1,3 @@
-# check if has nvidia drivers
-# https://documentation.ubuntu.com/server/how-to/graphics/install-nvidia-drivers/index.html
-    # sudo apt-get install -y ubuntu-drivers-common
-    # sudo ubuntu-drivers list --gpgpu
-    # sudo ubuntu-drivers install --gpgpu nvidia:535-server
-    # sudo apt install nvidia-cuda-toolkit
-    # nvcc --version
-    # sudo apt install nvidia-utils-535-server
-    # sudo reboot # reboot to apply changes
-    # nvidia-smi
-
 #!/bin/bash
 
 sudo apt-get update
@@ -24,10 +13,21 @@ conda activate myenv
 # requirements
 cd $HOME && git clone https://github.com/mistralai/mistral-finetune.git
 cd mistral-finetune
-pip install torch==2.2
+pip install torch==2.2  # takes like 5 minutes on aws
 pip install -r requirements.txt
 pip install mistral-common==1.5.0 # downgrade needed
 
+# check if has nvidia drivers
+# dl deps first then this or else wheels for xformers gets stuck
+# https://documentation.ubuntu.com/server/how-to/graphics/install-nvidia-drivers/index.html
+    # sudo apt-get install -y ubuntu-drivers-common
+    # sudo ubuntu-drivers list --gpgpu
+    # sudo ubuntu-drivers install --gpgpu nvidia:535-server
+    # sudo apt install nvidia-cuda-toolkit
+    # nvcc --version
+    # sudo apt install nvidia-utils-535-server
+    # sudo reboot # reboot to apply changes
+    # nvidia-smi
 
 # download mistral 7B model
 # takes like 10 minutes to dl
