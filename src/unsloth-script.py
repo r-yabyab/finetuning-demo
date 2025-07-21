@@ -50,7 +50,8 @@ pass
 from datasets import load_dataset
 dataset = load_dataset("json", data_files="/home/ubuntu/finetuning-demo/src/data/data_chunk_train.jsonl", split = "train")
 dataset = dataset.map(formatting_prompts_func, batched = True,)
-
+eval_dataset = load_dataset("json", data_files="/home/ubuntu/finetuning-demo/src/data/data_chunk_eval.jsonl", split="train")
+eval_dataset = eval_dataset.map(formatting_prompts_func, batched=True)
 
 
 from trl import SFTConfig, SFTTrainer
@@ -58,6 +59,7 @@ trainer = SFTTrainer(
     model = model,
     tokenizer = tokenizer,
     train_dataset = dataset,
+    eval_dataset = eval_dataset,  # Add eval_dataset if you have one
     dataset_text_field = "text",
     max_seq_length = max_seq_length,
     packing = False, # Can make training 5x faster for short sequences.
@@ -66,6 +68,10 @@ trainer = SFTTrainer(
         gradient_accumulation_steps = 4,
         warmup_steps = 5,
         max_steps = 60,
+        eval_strategy="steps",
+        eval_steps=10,
+        save_strategy="steps",
+        save_steps=10,
         learning_rate = 2e-4,
         logging_steps = 1,
         optim = "adamw_8bit",
