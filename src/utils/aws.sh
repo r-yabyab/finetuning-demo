@@ -1,5 +1,15 @@
 # check if has nvidia drivers
 # https://documentation.ubuntu.com/server/how-to/graphics/install-nvidia-drivers/index.html
+    # sudo apt-get install -y ubuntu-drivers-common
+    # sudo ubuntu-drivers list --gpgpu
+    # sudo ubuntu-drivers install --gpgpu nvidia:535-server
+    # sudo apt install nvidia-cuda-toolkit
+    # nvcc --version
+    # sudo apt install nvidia-utils-535-server
+    # sudo reboot # reboot to apply changes
+    # nvidia-smi
+
+#!/bin/bash
 
 sudo apt-get update
 sudo apt install -y build-essential
