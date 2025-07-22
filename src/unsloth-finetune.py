@@ -1,6 +1,6 @@
 from unsloth import FastLanguageModel
 import torch
-max_seq_length = 512 # Choose any! We auto support RoPE Scaling internally!
+max_seq_length = 2048 # Choose any! We auto support RoPE Scaling internally!
 dtype = None # None for auto detection. Float16 for Tesla T4, V100, Bfloat16 for Ampere+
 load_in_4bit = True # Use 4bit quantization to reduce memory usage. Can be False.
 
@@ -10,7 +10,8 @@ fourbit_models = [
 ] # More models at https://huggingface.co/unsloth
 
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name = "unsloth/mistral-7b-instruct-v0.3-bnb-4bit", # Choose ANY! eg teknium/OpenHermes-2.5-Mistral-7B
+    model_name = "unsloth/mistral-7b-instruct-v0.3-bnb-4bit", # Using instruct version for better chat performance
+    # model_name = "unsloth/mistral-7b-bnb-4bit", # Choose ANY! eg teknium/OpenHermes-2.5-Mistral-7B
     max_seq_length = max_seq_length,
     dtype = dtype,
     load_in_4bit = load_in_4bit,
@@ -36,22 +37,35 @@ from unsloth.chat_templates import get_chat_template
 
 tokenizer = get_chat_template(
     tokenizer,
-    chat_template = "chatml", # Supports zephyr, chatml, mistral, llama, alpaca, vicuna, vicuna_old, unsloth
-    mapping = {"role" : "from", "content" : "value", "user" : "human", "assistant" : "gpt"}, # ShareGPT style
+    chat_template = "mistral", # Supports zephyr, chatml, mistral, llama, alpaca, vicuna, vicuna_old, unsloth
+    # mapping = {"role" : "from", "content" : "value", "user" : "human", "assistant" : "gpt"}, # ShareGPT style
     map_eos_token = True, # Maps <|im_end|> to </s> instead
 )
 
 def formatting_prompts_func(examples):
     convos = examples["messages"] # changed from "conversations" to work with my data
-    texts = [tokenizer.apply_chat_template(convo, tokenize = False, add_generation_prompt = False) for convo in convos]
-    return { "text" : texts, }
+    texts = []
+    for convo in convos:
+        # Apply chat template and ensure proper format for Mistral
+        text = tokenizer.apply_chat_template(
+            convo, 
+            tokenize=False, 
+            add_generation_prompt=False
+        )
+        texts.append(text)
+    return {"text": texts}
 pass
 
 from datasets import load_dataset
-dataset = load_dataset("json", data_files="/home/ubuntu/finetuning-demo/src/data/data_chunk_train.jsonl", split = "train")
+dataset = load_dataset("json", data_files="w:/Users/cayab/finetuning-demo/src/data/data_chunk_train.jsonl", split = "train")
 dataset = dataset.map(formatting_prompts_func, batched = True,)
-eval_dataset = load_dataset("json", data_files="/home/ubuntu/finetuning-demo/src/data/data_chunk_eval.jsonl", split="train")
-eval_dataset = eval_dataset.map(formatting_prompts_func, batched=True)
+# eval_dataset = load_dataset("json", data_files="w:/Users/cayab/finetuning-demo/src/data/data_chunk_eval.jsonl", split="train")
+# eval_dataset = eval_dataset.map(formatting_prompts_func, batched=True)
+
+# Print a sample to verify formatting
+print("Sample formatted prompt:")
+print(dataset[0]["text"])
+print("=" * 50)
 
 
 from trl import SFTConfig, SFTTrainer
@@ -59,7 +73,7 @@ trainer = SFTTrainer(
     model = model,
     tokenizer = tokenizer,
     train_dataset = dataset,
-    eval_dataset = eval_dataset,  # Add eval_dataset if you have one
+    # eval_dataset = eval_dataset,  # Add eval_dataset if you have one
     dataset_text_field = "text",
     max_seq_length = max_seq_length,
     packing = False, # Can make training 5x faster for short sequences.
@@ -68,10 +82,10 @@ trainer = SFTTrainer(
         gradient_accumulation_steps = 4,
         warmup_steps = 5,
         max_steps = 60,
-        eval_strategy="steps",
-        eval_steps=10,
-        save_strategy="steps",
-        save_steps=10,
+        # eval_strategy="steps",
+        # eval_steps=10,
+        # save_strategy="steps",
+        # save_steps=10,
         learning_rate = 2e-4,
         logging_steps = 1,
         optim = "adamw_8bit",
