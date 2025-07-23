@@ -59,7 +59,7 @@ pass
 from datasets import load_dataset
 dataset = load_dataset("json", data_files="/home/ubuntu/finetuning-demo/src/data/data_chunk_train.jsonl", split = "train")
 dataset = dataset.map(formatting_prompts_func, batched = True,)
-# eval_dataset = load_dataset("json", data_files="w:/Users/cayab/finetuning-demo/src/data/data_chunk_eval.jsonl", split="train")
+# eval_dataset = load_dataset("json", data_files="/home/ubuntu/finetuning-demo/src/data/data_chunk_eval.jsonl", split="train")
 # eval_dataset = eval_dataset.map(formatting_prompts_func, batched=True)
 
 # Print a sample to verify formatting

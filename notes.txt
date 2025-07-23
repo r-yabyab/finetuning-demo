@@ -11,3 +11,9 @@ ERROR: No matching distribution found for triton==2.2
 # weird output related
 # https://github.com/unslothai/unsloth/issues/877
 # https://github.com/unslothai/unsloth/issues/787
+
+
+For eval:
+https://docs.unsloth.ai/basics/troubleshooting-and-faqs#how-to-do-evaluation
+
+100gb vol for converting llama.cpp

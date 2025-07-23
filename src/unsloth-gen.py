@@ -21,13 +21,13 @@ from unsloth.chat_templates import get_chat_template
 
 tokenizer = get_chat_template(
     tokenizer,
-    chat_template = "mistral", # Supports zephyr, chatml, mistral, llama, alpaca, vicuna, vicuna_old, unsloth
-    #mapping = {"role" : "from", "content" : "value", "user" : "human", "assistant" : "gpt"}, # ShareGPT style
+    chat_template = "chatml", # Supports zephyr, chatml, mistral, llama, alpaca, vicuna, vicuna_old, unsloth
+    mapping = {"role" : "from", "content" : "value", "user" : "human", "assistant" : "gpt"}, # ShareGPT style
     map_eos_token = True, # Maps <|im_end|> to </s> instead
 )
 
 def formatting_prompts_func(examples):
-    convos = examples["messages"] # changed from "conversations" to work with my data
+    convos = examples["conversations"] # changed from "conversations" to work with my data
     texts = [tokenizer.apply_chat_template(convo, tokenize = False, add_generation_prompt = False) for convo in convos]
     return { "text" : texts, }
 pass
