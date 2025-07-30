@@ -17,3 +17,11 @@ For eval:
 https://docs.unsloth.ai/basics/troubleshooting-and-faqs#how-to-do-evaluation
 
 100gb vol for converting llama.cpp
+
+
+https://huggingface.co/docs/datasets/en/load_hub
+
+Just use vscode-remote-ssh it's easier
+
+apply the LoRA adapter using model.load_adapter or FastLanguageModel.get_peft_model, 
+or merge the adapter into the base model and save it as a merged model for future direct loading.

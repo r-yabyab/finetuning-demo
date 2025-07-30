@@ -20,7 +20,7 @@ sudo apt-get install -y ubuntu-drivers-common
 sudo ubuntu-drivers list --gpgpu
 sudo ubuntu-drivers install --gpgpu nvidia:535-server
 sudo apt install nvidia-utils-535-server
-sudo reboot # reboot to apply changes, best if you rebooted from console
+sudo reboot # reboot to apply changes, could do from aws as well
 nvidia-smi
 # watch -n 5 nvidia-smi
 conda activate unsloth_env

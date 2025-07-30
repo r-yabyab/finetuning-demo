@@ -17,6 +17,8 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     # token = "hf_...", # use one if using gated models like meta-llama/Llama-2-7b-hf
 )
 
+# model.load_adapter()
+
 from unsloth.chat_templates import get_chat_template
 
 tokenizer = get_chat_template(
