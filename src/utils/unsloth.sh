@@ -1,5 +1,19 @@
 # https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Mistral_v0.3_(7B)-Conversational.ipynb#scrollTo=GqwZAVbRtjWF
 
+# check if has nvidia drivers
+# dl deps first then this or else wheels for xformers gets stuck
+# https://documentation.ubuntu.com/server/how-to/graphics/install-nvidia-drivers/index.html
+sudo apt-get install -y ubuntu-drivers-common
+sudo ubuntu-drivers list --gpgpu    # 24.04 LTS AMI should list 535 as first
+# sudo ubuntu-drivers install --gpgpu nvidia:535-server
+    sudo apt install nvidia-driver-535 # check uname -r if aws or generic, currently works on west-2 terraform
+# sudo apt install nvidia-utils-535-server
+sudo apt install nvidia-utils-535
+sudo reboot # reboot to apply changes, could do from aws as well
+nvidia-smi # should show a table like thing
+# watch -n 5 nvidia-smi
+conda activate unsloth_env
+
 #18gb vol
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
@@ -12,18 +26,6 @@ conda activate unsloth_env
 
 pip install unsloth
 
-
-# check if has nvidia drivers
-# dl deps first then this or else wheels for xformers gets stuck
-# https://documentation.ubuntu.com/server/how-to/graphics/install-nvidia-drivers/index.html
-sudo apt-get install -y ubuntu-drivers-common
-sudo ubuntu-drivers list --gpgpu
-sudo ubuntu-drivers install --gpgpu nvidia:535-server
-sudo apt install nvidia-utils-535-server
-sudo reboot # reboot to apply changes, could do from aws as well
-nvidia-smi
-# watch -n 5 nvidia-smi
-conda activate unsloth_env
 
 # clone repo, then create /data with jsonl
 git clone https://github.com/r-yabyab/finetuning-demo.git
