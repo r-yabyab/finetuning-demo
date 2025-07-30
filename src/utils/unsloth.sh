@@ -6,18 +6,18 @@
 sudo apt-get install -y ubuntu-drivers-common
 sudo ubuntu-drivers list --gpgpu    # 24.04 LTS AMI should list 535 as first
 # sudo ubuntu-drivers install --gpgpu nvidia:535-server
-    sudo apt install nvidia-driver-535 # check uname -r if aws or generic, currently works on west-2 terraform
+    sudo apt install nvidia-driver-535 # check uname -r if aws or generic, currently works on west-2 terraform... works for both aws/generic
 # sudo apt install nvidia-utils-535-server
 sudo apt install nvidia-utils-535
 sudo reboot # reboot to apply changes, could do from aws as well
 nvidia-smi # should show a table like thing
 # watch -n 5 nvidia-smi
-conda activate unsloth_env
 
 #18gb vol
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 source ~/.bashrc
+# a, a, ENTER
 conda create --name unsloth_env \
     python=3.11 \
     pytorch-cuda=12.1 \
