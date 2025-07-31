@@ -35,3 +35,9 @@ Data flow:
 - r .json
     - Append context into question
     -> w instruction.json
+Load the output checkpoint as llm
+
+
+
+if can run finetune but it breaks after like 10 steps, need to reduce seq length
+Unsupported conversion from f16 to f16 LLVM ERROR: Unsupported rounding mode for conversion.
