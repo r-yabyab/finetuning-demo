@@ -41,3 +41,27 @@ Load the output checkpoint as llm
 
 if can run finetune but it breaks after like 10 steps, need to reduce seq length
 Unsupported conversion from f16 to f16 LLVM ERROR: Unsupported rounding mode for conversion.
+
+
+https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Llama3.2_(1B_and_3B)-Conversational.ipynb
+- input examples, sharegpt, completion
+
+# Both works, on hf and downloaded locally
+dataset = load_dataset("json", data_files="/home/ubuntu/finetuning-demo/src/data/dataset.jsonl", split = "train")
+dataset = load_dataset("pookie3000/donald_trump_interviews", split="train")
+
+
+================
+# same data
+loss for mistral-7b-instruct
+Unsloth: Will smartly offload gradients to save VRAM!
+{'loss': 0.8824, 'grad_norm': 9.151384353637695, 'learning_rate': 0.0, 'epoch': 0.0}
+{'loss': 1.0191, 'grad_norm': nan, 'learning_rate': 4e-05, 'epoch': 0.01}
+{'loss': 0.9445, 'grad_norm': nan, 'learning_rate': 4e-05, 'epoch': 0.01}
+  1%|█▏    
+
+loss for meta-llama-3.1-8b
+Unsloth: Will smartly offload gradients to save VRAM!
+{'loss': 2.9963, 'grad_norm': 1.5264372825622559, 'learning_rate': 0.0, 'epoch': 0.0}
+{'loss': 2.9777, 'grad_norm': 1.6279881000518799, 'learning_rate': 4e-05, 'epoch': 0.01}
+  1%|▊       

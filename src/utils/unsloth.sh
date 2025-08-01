@@ -40,6 +40,7 @@ conda create --yes --name unsloth_env \
   pytorch-cuda=12.1 \
   pytorch cudatoolkit xformers \
   -c pytorch -c nvidia -c xformers
+conda activate unsloth_env
 
 pip install unsloth
 

@@ -7,6 +7,8 @@ load_in_4bit = True # Use 4bit quantization to reduce memory usage. Can be False
 # 4bit pre quantized models we support for 4x faster downloading + no OOMs.
 fourbit_models = [
     "unsloth/mistral-7b-bnb-4bit",
+    "unsloth/mistral-7b-instruct-v0.3-bnb-4bit",
+    "unsloth/Meta-Llama-3.1-8B-bnb-4bit",
 ] # More models at https://huggingface.co/unsloth
 
 model, tokenizer = FastLanguageModel.from_pretrained(
@@ -64,7 +66,9 @@ pass
 
 from datasets import load_dataset
 # dataset = load_dataset("json", data_files="/home/ubuntu/finetuning-demo/src/data/data_chunk_train.jsonl", split = "train")
-dataset = load_dataset("pookie3000/donald_trump_interviews", split="train")
+# dataset = load_dataset("pookie3000/donald_trump_interviews", split="train")
+dataset = load_dataset("json", data_files="../data/instruction-training.jsonl", split = "train")
+# dataset = load_dataset("pookie3000/donald_trump_interviews", split="train")
 dataset = dataset.map(formatting_prompts_func, batched = True,)
 # eval_dataset = load_dataset("json", data_files="/home/ubuntu/finetuning-demo/src/data/data_chunk_eval.jsonl", split="train")
 # eval_dataset = eval_dataset.map(formatting_prompts_func, batched=True)
