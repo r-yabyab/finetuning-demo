@@ -6,23 +6,40 @@
 sudo apt-get install -y ubuntu-drivers-common
 sudo ubuntu-drivers list --gpgpu    # 24.04 LTS AMI should list 535 as first
 # sudo ubuntu-drivers install --gpgpu nvidia:535-server
-    sudo apt install nvidia-driver-535 # check uname -r if aws or generic, currently works on west-2 terraform... works for both aws/generic
+    sudo apt install -y nvidia-driver-535 nvidia-utils-535 # check uname -r if aws or generic, currently works on west-2 terraform... works for both aws/generic
 # sudo apt install nvidia-utils-535-server
-sudo apt install nvidia-utils-535
+# sudo apt install nvidia-utils-535
 sudo reboot # reboot to apply changes, could do from aws as well
 nvidia-smi # should show a table like thing
 # watch -n 5 nvidia-smi
 
-#18gb vol
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh
+# #18gb vol
+# wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# bash Miniconda3-latest-Linux-x86_64.sh
+# source ~/.bashrc
+# # a, a, ENTER
+# conda create --name unsloth_env \
+#     python=3.11 \
+#     pytorch-cuda=12.1 \
+#     pytorch cudatoolkit xformers -c pytorch -c nvidia -c xformers
+# conda activate unsloth_env
+
+
+# Install Miniconda silently
+bash Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda3
+
+# Initialize Conda for current shell
+$HOME/miniconda3/bin/conda init
 source ~/.bashrc
-# a, a, ENTER
-conda create --name unsloth_env \
-    python=3.11 \
-    pytorch-cuda=12.1 \
-    pytorch cudatoolkit xformers -c pytorch -c nvidia -c xformers
-conda activate unsloth_env
+
+# Create conda environment non-interactively
+conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+conda create --yes --name unsloth_env \
+  python=3.11 \
+  pytorch-cuda=12.1 \
+  pytorch cudatoolkit xformers \
+  -c pytorch -c nvidia -c xformers
 
 pip install unsloth
 
