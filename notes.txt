@@ -96,3 +96,8 @@ https://www.reddit.com/r/unsloth/comments/1j83car/new_finetuning_101_guide_for_b
     https://docs.unsloth.ai/basics/datasets-guide
 https://github.com/JayGLXR/SynthDataGen
 - Synthetic data creation (rust)
+
+
+
+{"conversations": [{"role": "user", "content": "content here"}, {"role": "assistant", "content": "content here"}]}
+{"conversations": [{"role": "user", "content": "content here"}, {"role": "assistant", "content": "content here"}]}
