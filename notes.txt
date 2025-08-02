@@ -65,3 +65,34 @@ Unsloth: Will smartly offload gradients to save VRAM!
 {'loss': 2.9963, 'grad_norm': 1.5264372825622559, 'learning_rate': 0.0, 'epoch': 0.0}
 {'loss': 2.9777, 'grad_norm': 1.6279881000518799, 'learning_rate': 4e-05, 'epoch': 0.01}
   1%|▊       
+
+loss for mistral-7b 
+Unsloth: Will smartly offload gradients to save VRAM!
+{'loss': 1.3174, 'grad_norm': inf, 'learning_rate': 0.0, 'epoch': 0.0}
+{'loss': 1.4853, 'grad_norm': inf, 'learning_rate': 0.0, 'epoch': 0.01}
+{'loss': 1.155, 'grad_norm': inf, 'learning_rate': 0.0, 'epoch': 0.01}
+{'loss': 2.1475, 'grad_norm': inf, 'learning_rate': 0.0, 'epoch': 0.02}
+{'loss': 1.6843, 'grad_norm': 13.035565376281738, 'learning_rate': 0.0, 'epoch': 0.02}
+{'loss': 1.3547, 'grad_norm': 15.03381633758545, 'learning_rate': 4e-05, 'epoch': 0.03}
+{'loss': 1.2782, 'grad_norm': 11.31531810760498, 'learning_rate': 8e-05, 'epoch': 0.03}
+{'loss': 1.0215, 'grad_norm': 13.942950248718262, 'learning_rate': 0.00012, 'epoch': 0.04}
+{'loss': 0.4631, 'grad_norm': 6.264810562133789, 'learning_rate': 0.00016, 'epoch': 0.04}
+{'loss': 0.0652, 'grad_norm': 4.181741714477539, 'learning_rate': 0.0002, 'epoch': 0.05}
+
+
+...
+
+Further dataset notes:
+https://github.com/unslothai/unsloth/issues/337
+- how do i make a Dataset correctly? #337
+https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Llama3.2_(1B_and_3B)-Conversational.ipynb#scrollTo=LjY75GoYUCB8
+https://colab.research.google.com/drive/1_yNCks4BTD5zOnjozppphh5GzMFaMKq_?usp=sharing#scrollTo=95_Nn-89DhsL
+- alpaca + mistral7b
+https://colab.research.google.com/drive/15F1xyn8497_dUbxZP4zWmPZ3PJx1Oymv?usp=sharing#scrollTo=buRvIVj1UlSN
+- chatML and chat templates for mistral7b
+https://www.reddit.com/r/unsloth/comments/1j83car/new_finetuning_101_guide_for_best_practices_basics/
+- fine tuning guide and best practices... actual unsloth doc
+    https://docs.unsloth.ai/get-started/fine-tuning-llms-guide
+    https://docs.unsloth.ai/basics/datasets-guide
+https://github.com/JayGLXR/SynthDataGen
+- Synthetic data creation (rust)
