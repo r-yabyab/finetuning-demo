@@ -24,8 +24,9 @@ from unsloth.chat_templates import get_chat_template
 tokenizer = get_chat_template(
     tokenizer,
     chat_template = "llama", # Supports zephyr, chatml, mistral, llama, alpaca, vicuna, vicuna_old, unsloth
-    mapping = {"role" : "from", "content" : "value", "user" : "human", "assistant" : "gpt"}, # ShareGPT style
-    map_eos_token = True, # Maps <|im_end|> to </s> instead
+    # chat_template = "mistral", # Supports zephyr, chatml, mistral, llama, alpaca, vicuna, vicuna_old, unsloth
+    # mapping = {"role" : "from", "content" : "value", "user" : "human", "assistant" : "gpt"}, # ShareGPT style
+    # map_eos_token = True, # Maps <|im_end|> to </s> instead
 )
 
 inputs = tokenizer.apply_chat_template(
@@ -44,4 +45,5 @@ _ = model.generate(
   top_k = 64,
   max_new_tokens = 100,
   use_cache = True
+#   use_cache = False
 )
