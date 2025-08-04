@@ -101,3 +101,13 @@ https://github.com/JayGLXR/SynthDataGen
 
 {"conversations": [{"role": "user", "content": "content here"}, {"role": "assistant", "content": "content here"}]}
 {"conversations": [{"role": "user", "content": "content here"}, {"role": "assistant", "content": "content here"}]}
+
+
+data validation code output
+- run snippet to see if any runtime errors
+- see if A in Q&A has any weird tokens
+    - check if syntax going in is good
+- use synthetic generation for Q's
+- look for best practices in generated code validation
+
+Use benchmark data from HF
