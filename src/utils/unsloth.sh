@@ -1,5 +1,7 @@
 # https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Mistral_v0.3_(7B)-Conversational.ipynb#scrollTo=GqwZAVbRtjWF
 
+sudo apt-get update
+
 # check if has nvidia drivers
 # dl deps first then this or else wheels for xformers gets stuck
 # https://documentation.ubuntu.com/server/how-to/graphics/install-nvidia-drivers/index.html
@@ -26,6 +28,7 @@ nvidia-smi # should show a table like thing
 
 
 # Install Miniconda silently
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda3
 
 # Initialize Conda for current shell

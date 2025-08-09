@@ -8,10 +8,11 @@ messages = [{
     "content": "Who are you?"
 }]
 
+MODEL_PATH = "outputs/checkpoint-125"
 
 model, tokenizer = FastLanguageModel.from_pretrained(
     # model_name = "unsloth/Meta-Llama-3.1-8B-bnb-4bit", # Using instruct version for better chat performance
-    model_name = "outputs/checkpoint-216", # Using instruct version for better chat performance
+    model_name = MODEL_PATH, # Using instruct version for better chat performance
     # model_name = "unsloth/mistral-7b-bnb-4bit", # Choose ANY! eg teknium/OpenHermes-2.5-Mistral-7B
     max_seq_length = max_seq_length,
     dtype = dtype,
@@ -36,14 +37,33 @@ inputs = tokenizer.apply_chat_template(
     tokenize = True,
 ).to("cuda")
 
+temperature = 1.0
+max_new_tokens = 100
+
 text_streamer = TextStreamer(tokenizer, skip_prompt = True)
 _ = model.generate(
   input_ids = inputs,
   streamer = text_streamer,
-  temperature = 1.0,
+  temperature = temperature,
   top_p = 0.95,
   top_k = 64,
-  max_new_tokens = 100,
+  max_new_tokens = max_new_tokens,
   use_cache = True
 #   use_cache = False
 )
+
+import json
+import os
+
+config_path = f"{MODEL_PATH}/adapter_config.json"
+if os.path.exists(config_path):
+    with open(config_path, 'r') as f:
+        adapter_config = json.load(f)
+    
+    base_model = adapter_config.get("base_model_name_or_path", "Not found")
+    print(f"\nBase model: {base_model}")
+else:
+    print(f"\nAdapter config not found at {config_path}")
+
+print(f"Temperature: {temperature}")
+print(f"Max new tokens: {max_new_tokens}")
