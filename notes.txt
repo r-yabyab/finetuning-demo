@@ -110,5 +110,6 @@ data validation code output
 - use synthetic generation for Q's
 - look for best practices in generated code validation
 -==> quantitive (metrics with wandb) and qualitative (??)
+- https://platform.openai.com/docs/guides/evals?api-mode=responses
 
 Use benchmark data from HF

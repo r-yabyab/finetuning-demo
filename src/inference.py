@@ -5,7 +5,8 @@ dtype = None # None for auto detection. Float16 for Tesla T4, V100, Bfloat16 for
 load_in_4bit = True # Use 4bit quantization to reduce memory usage. Can be False.
 messages = [{
     "role": "user",
-    "content": "Who are you?"
+    # "content": "Who are you?"
+    "content": "In Spring Boot, implement a security filter"
 }]
 
 MODEL_PATH = "outputs/checkpoint-125"
