@@ -8,7 +8,7 @@ load_in_4bit = True
 
 messages = [{
     "role": "user",
-    "content": "In Spring Boot, implement a security filter"
+    # "content": "In Spring Boot, implement a security filter"
 }]
 
 BASE_MODEL_PATH = "unsloth/Meta-Llama-3.1-8B-bnb-4bit"

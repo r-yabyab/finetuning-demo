@@ -109,5 +109,6 @@ data validation code output
     - check if syntax going in is good
 - use synthetic generation for Q's
 - look for best practices in generated code validation
+-==> quantitive (metrics with wandb) and qualitative (??)
 
 Use benchmark data from HF
