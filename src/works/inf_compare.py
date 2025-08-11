@@ -8,11 +8,11 @@ load_in_4bit = True
 
 messages = [{
     "role": "user",
-    # "content": "In Spring Boot, implement a security filter"
+    "content": "In Spring Boot, implement a security filter"
 }]
 
 BASE_MODEL_PATH = "unsloth/Meta-Llama-3.1-8B-bnb-4bit"
-LORA_MODEL_PATH = "outputs/checkpoint-125"  # Your fine-tuned LoRA checkpoint
+LORA_MODEL_PATH = "outputs/checkpoint-125"
 
 print("Loading base model...")
 base_model, base_tokenizer = FastLanguageModel.from_pretrained(

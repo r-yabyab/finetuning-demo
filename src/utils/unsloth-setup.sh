@@ -28,3 +28,6 @@ source activate unsloth_env
 
 # Install Unsloth
 pip install unsloth
+
+# for logging
+pip install tensorboard
