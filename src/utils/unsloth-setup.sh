@@ -10,7 +10,9 @@ rm miniconda.sh
 
 # Initialize Conda for current shell
 "$HOME/miniconda3/bin/conda" init
-source ~/.bashrc
+
+eval "$($HOME/miniconda3/bin/conda shell.bash hook)"
+# source ~/.bashrc
 
 # Accept TOS for Anaconda repositories
 conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
@@ -24,7 +26,7 @@ conda create --yes --name unsloth_env \
   -c pytorch -c nvidia -c xformers
 
 # Activate environment
-source activate unsloth_env
+conda activate unsloth_env
 
 # Install Unsloth
 pip install unsloth
