@@ -116,3 +116,7 @@ Use benchmark data from HF
 
 grabbed java data from
 https://github.com/topics/java-project
+
+
+static evaluation using CodeXGLUE
+- https://arxiv.org/pdf/2102.04664

@@ -1,0 +1,15 @@
+Write complete Java code with:
+1. Class `Account` with fields: `accountNumber`, `owner`, `balance` and methods:
+   - `deposit(double amount)`
+   - `withdraw(double amount)` (no overdraft allowed)
+   - `toString()` for account details
+2. Class `Bank` that manages multiple `Account` objects in a list:
+   - `addAccount(Account account)`
+   - `findAccount(String accountNumber)`
+   - `transfer(String fromAccount, String toAccount, double amount)`
+3. A `Main` class to:
+   - Create two accounts
+   - Deposit and withdraw money
+   - Transfer money between accounts
+   - Print final balances
+All in one file.

@@ -1,0 +1,13 @@
+Write complete Java code for a simple Library Management System with the following:
+1. A class `Book` with fields: `title`, `author`, and `isbn`, plus a constructor, getters, and a `toString` method.
+2. A class `Library` that stores a `List<Book>` and has:
+   - `addBook(Book book)`
+   - `removeBookByIsbn(String isbn)`
+   - `findBookByTitle(String title)` which returns a Book or null
+3. A `Main` class with a `main` method that:
+   - Creates a Library
+   - Adds at least two books
+   - Finds a book by title and prints it
+   - Removes a book by ISBN
+   - Prints remaining books
+The code should be fully self-contained in one file, but still contain these three separate classes.

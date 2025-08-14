@@ -1,0 +1,12 @@
+Write Java code with:
+1. Class `Student` (id, name, grades list) and methods:
+   - `addGrade(double grade)`
+   - `getAverage()`
+2. Class `School` that stores students and can:
+   - Add students
+   - Find student by ID
+3. Main to:
+   - Create students
+   - Add grades
+   - Print averages
+All in one file.

@@ -1,0 +1,10 @@
+Java code with:
+1. Class `Task` (id, description, completed flag)
+2. Class `TaskManager`:
+   - Add task
+   - Mark complete
+   - List tasks
+3. Main to:
+   - Add tasks
+   - Mark one as complete
+   - Print all tasks

@@ -1,0 +1,10 @@
+Java program with:
+1. Class `Item` (name, quantity, price)
+2. Class `Inventory`:
+   - Add item
+   - Remove item
+   - Calculate total value
+3. Main to:
+   - Add items
+   - Remove one
+   - Print total value
