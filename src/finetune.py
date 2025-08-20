@@ -60,7 +60,7 @@ pass
 from datasets import load_dataset
 dataset = load_dataset("json", data_files="../data/data.jsonl", split = "train")
 
-split_dataset = dataset.train_test_split(test_size=0.1, seed=3407)
+split_dataset = dataset.train_test_split(test_size=0.2, seed=3407)
 train_dataset = split_dataset["train"]
 eval_dataset = split_dataset["test"]
 
@@ -91,7 +91,7 @@ trainer = SFTTrainer(
         num_train_epochs = 1,
         # max_steps = 60,
         eval_strategy="steps",
-        eval_steps=10,
+        eval_steps=10, # this goes through the eval data every n steps
         # save_strategy="steps",
         # save_steps=10,
         learning_rate = 2e-4,
