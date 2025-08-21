@@ -120,3 +120,11 @@ https://github.com/topics/java-project
 
 static evaluation using CodeXGLUE
 - https://arxiv.org/pdf/2102.04664
+
+
+To do first n:
+dataset = load_dataset("roneneldan/TinyStories", split = "train[:2500]")
+- dataset has text: completions only
+
+Unsloth faq:
+https://docs.unsloth.ai/basics/troubleshooting-and-faqs
