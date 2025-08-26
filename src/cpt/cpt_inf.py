@@ -4,14 +4,13 @@ from transformers import TextIteratorStreamer
 from threading import Thread
 import textwrap
 
-# Load the model and tokenizer first
-max_seq_length = 2048
+# max_seq_length = 2048
+max_seq_length = 512
 dtype = None
 load_in_4bit = True
 
-# Load your fine-tuned model
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name = "outputs-cpt/checkpoint-14",  # Path to your fine-tuned model
+    model_name = "outputs-cpt/checkpoint-47",
     max_seq_length = max_seq_length,
     dtype = dtype,
     load_in_4bit = load_in_4bit,
@@ -20,11 +19,9 @@ model, tokenizer = FastLanguageModel.from_pretrained(
 # Prepare for inference
 FastLanguageModel.for_inference(model)
 
-# Create text streamer with the tokenizer
 text_streamer = TextIteratorStreamer(tokenizer, skip_prompt=False)
 max_print_width = 100
 
-# Prepare inputs
 inputs = tokenizer(
     [
         "Summarize Cannabis use and dimensions of psychosis in a nonclinical population of female subjects."
@@ -33,10 +30,10 @@ inputs = tokenizer(
 generation_kwargs = dict(
     **inputs,  # Unpack inputs properly
     streamer=text_streamer,
-    max_new_tokens=256,
+    max_new_tokens=100,
     use_cache=True,
     do_sample=True,
-    temperature=0.7,
+    temperature=0.9,
     pad_token_id=tokenizer.eos_token_id,
 )
 
@@ -60,4 +57,4 @@ for j, new_text in enumerate(text_streamer):
         print(new_text, end="")
 
 thread.join()  # Wait for generation to complete
-print("\n")  # Add final newline
+print("\n")

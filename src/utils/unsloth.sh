@@ -47,6 +47,8 @@ conda activate unsloth_env
 
 pip install unsloth
 
+## if WSL, running the finetuning will take about 9gb of C: volume as its runs, then release when done
+
 
 # clone repo, then create /data with jsonl
 git clone https://github.com/r-yabyab/finetuning-demo.git
