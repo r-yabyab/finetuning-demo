@@ -7,11 +7,21 @@ from typing import List, Tuple, Dict
 import argparse
 from datetime import datetime
 import glob
+import chromadb
+from sentence_transformers import SentenceTransformer
+import torch
 
 # how many gens per test
 pass_k_num = 3
 
 model_path = "../../outputs-full/checkpoint-110"
+
+# RAG Configuration
+VECTOR_DB_PATH = "../../vectordb"  # Adjust path to your vector database
+COLLECTION_NAME = "java_projects"
+
+# Initialize embedding model for RAG
+embed_model = SentenceTransformer('all-MiniLM-L6-v2')
 
 
 def discover_test_pairs() -> Dict[str, Dict[str, str]]:
@@ -80,6 +90,33 @@ def get_test_info(test_name: str = None) -> List[Dict[str, str]]:
     list_available_tests()
     return list(test_pairs.values())
 
+def get_rag_context(query: str, top_k: int = 3, enable_rag: bool = True):
+    """Get relevant context from RAG database"""
+    if not enable_rag:
+        return ""
+        
+    try:
+        # Check if vector database exists
+        if not os.path.exists(VECTOR_DB_PATH):
+            return ""
+            
+        # Load vector database
+        db = chromadb.PersistentClient(path=VECTOR_DB_PATH)
+        collection = db.get_or_create_collection(name=COLLECTION_NAME)
+        
+        query_embedding = embed_model.encode([query])
+        results = collection.query(
+            query_embeddings=query_embedding.tolist(),
+            n_results=top_k
+        )
+        
+        if results['documents'] and results['documents'][0]:
+            return "\n".join(results['documents'][0])
+        return ""
+    except Exception as e:
+        print(f"Warning: Could not retrieve RAG context: {e}")
+        return ""
+
 def load_model_and_tokenizer():
     """Load the fine-tuned model and tokenizer"""
     from unsloth import FastLanguageModel
@@ -111,11 +148,20 @@ def read_prompt(prompt_file: str) -> str:
     with open(prompt_file, "r") as f:
         return f.read().strip()
 
-def generate_solution(model, tokenizer, prompt: str, temperature: float = 0.8) -> str:
-    """Generate a single Java solution"""
+def generate_solution(model, tokenizer, prompt: str, temperature: float = 0.8, enable_rag: bool = True) -> str:
+    """Generate a single Java solution with RAG context"""
+    # Get RAG context
+    context = get_rag_context(prompt, enable_rag=enable_rag)
+    
+    # Create full prompt with context if available
+    if context:
+        full_prompt = f"Context:\n{context}\n\nTask:\n{prompt}"
+    else:
+        full_prompt = prompt
+    
     messages = [{
         "role": "user",
-        "content": prompt
+        "content": full_prompt
     }]
     
     inputs = tokenizer.apply_chat_template(
@@ -301,10 +347,20 @@ def save_results_to_file(filepath: str, new_results: dict) -> None:
     print(f"Results appended to: {filepath}")
     print(f"Total runs in file: {all_results['summary']['total_runs']}")
 
-def run_pass_k_evaluation(test_name: str = None, k: int = pass_k_num, temperature: float = 0.8) -> Tuple[dict, List[str]]:
+def run_pass_k_evaluation(test_name: str = None, k: int = pass_k_num, temperature: float = 0.8, enable_rag: bool = True) -> Tuple[dict, List[str]]:
     """Run complete pass@k evaluation for one or all tests"""
     print(f"Running pass@{k} evaluation...")
     print(f"Temperature: {temperature}")
+    
+    # Print RAG configuration
+    if enable_rag:
+        print(f"RAG: Enabled")
+        print(f"Vector Database: {VECTOR_DB_PATH}")
+        print(f"Collection: {COLLECTION_NAME}")
+        if not os.path.exists(VECTOR_DB_PATH):
+            print(f"WARNING: Vector database not found at {VECTOR_DB_PATH}")
+    else:
+        print(f"RAG: Disabled")
     
     # Get test information (now returns a list)
     test_infos = get_test_info(test_name)
@@ -334,7 +390,7 @@ def run_pass_k_evaluation(test_name: str = None, k: int = pass_k_num, temperatur
             
             # Generate solution
             try:
-                generated = generate_solution(model, tokenizer, prompt, temperature)
+                generated = generate_solution(model, tokenizer, prompt, temperature, enable_rag)
                 java_code = extract_java_code(generated, test_info['class_name'])
                 solutions.append(java_code)
                 
@@ -365,6 +421,8 @@ def run_pass_k_evaluation(test_name: str = None, k: int = pass_k_num, temperatur
             "model_path": model_path,
             "k": k,
             "temperature": temperature,
+            "rag_enabled": enable_rag,
+            "vector_db_path": VECTOR_DB_PATH if enable_rag else None,
             "total_solutions": len(results),
             "passed_solutions": pass_counts,
             "pass_at_1": pass_at_1,
@@ -393,6 +451,8 @@ def run_pass_k_evaluation(test_name: str = None, k: int = pass_k_num, temperatur
         "model_path": model_path,
         "k": k,
         "temperature": temperature,
+        "rag_enabled": enable_rag,
+        "vector_db_path": VECTOR_DB_PATH if enable_rag else None,
         "total_tests": len(all_results),
         "total_solutions": total_solutions,
         "total_passed": total_passed,
@@ -403,12 +463,13 @@ def run_pass_k_evaluation(test_name: str = None, k: int = pass_k_num, temperatur
     return overall_metrics, []
 
 def main():
-    parser = argparse.ArgumentParser(description="Run pass@k evaluation for Java programs. If no specific test is provided, runs all available tests.")
+    parser = argparse.ArgumentParser(description="Run pass@k evaluation for Java programs with RAG. If no specific test is provided, runs all available tests.")
     parser.add_argument("-t", "--test", type=str, help="Specific test to run (e.g., 'CalculatorTest'). If not provided, runs all tests.")
     parser.add_argument("-k", type=int, default=pass_k_num, help="Number of solutions to generate (default: 10)")
     parser.add_argument("--temperature", type=float, default=0.8, help="Generation temperature (default: 0.8)")
     parser.add_argument("-o", "--output", type=str, help="Output file for results (default: 'pass_k_results_all.json')")
     parser.add_argument("--list", action="store_true", help="List available tests and exit")
+    parser.add_argument("--no-rag", action="store_true", help="Disable RAG context retrieval")
     
     args = parser.parse_args()
     
@@ -421,6 +482,17 @@ def main():
     if not os.path.exists("tests"):
         print("ERROR: tests/ directory not found")
         return 1
+    
+    # Check for vector database if RAG is enabled
+    if not args.no_rag:
+        if not os.path.exists(VECTOR_DB_PATH):
+            print(f"WARNING: Vector database not found at {VECTOR_DB_PATH}")
+            print("RAG context will be disabled for this run.")
+            print("Use --no-rag to suppress this warning.")
+        else:
+            print(f"Using RAG with vector database at: {VECTOR_DB_PATH}")
+    else:
+        print("RAG context retrieval disabled.")
     
     # Get test info (will prompt if multiple tests and none specified)
     try:
@@ -445,12 +517,15 @@ def main():
     
     # Run evaluation
     try:
-        metrics, _ = run_pass_k_evaluation(args.test, args.k, args.temperature)
+        metrics, _ = run_pass_k_evaluation(args.test, args.k, args.temperature, not args.no_rag)
         
         # Print overall results
         print(f"\n{'='*60}")
         print(f"OVERALL PASS@K EVALUATION RESULTS")
         print(f"Model: {metrics['model_path']}")
+        print(f"RAG: {'Enabled' if metrics['rag_enabled'] else 'Disabled'}")
+        if metrics['rag_enabled'] and metrics['vector_db_path']:
+            print(f"Vector DB: {metrics['vector_db_path']}")
         print(f"{'='*60}")
         print(f"Total tests run: {metrics['total_tests']}")
         print(f"Total solutions generated: {metrics['total_solutions']}")

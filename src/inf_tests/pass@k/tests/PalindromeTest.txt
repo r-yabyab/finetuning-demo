@@ -1,10 +1,9 @@
 Write a complete Java class named StringUtils that:
 1. Has a public class declaration: `public class StringUtils {`
-2. Has a public instance method `reverseString(String input)` that returns the reversed version of the input string
+2. Has a public instance method `isPalindrome(String input)` that checks if input string is a palindrome
 
 The class should work with JUnit tests where:
 - An instance is created directly in the test: `StringUtils utils = new StringUtils();`
-- Edge cases like null, empty strings, and special characters are tested
 
 Example structure:
 ```java

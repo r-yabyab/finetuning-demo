@@ -1,0 +1,448 @@
+{
+  "runs": [
+    {
+      "timestamp": "2025-08-27T15:15:39.780625",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 3,
+      "temperature": 0.8,
+      "total_tests": 2,
+      "total_solutions": 6,
+      "total_passed": 3,
+      "overall_pass_rate": 0.5,
+      "test_results": [
+        {
+          "timestamp": "2025-08-27T15:15:07.116983",
+          "test_name": "CalculatorTest",
+          "class_name": "Calculator",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "total_solutions": 3,
+          "passed_solutions": 3,
+          "pass_at_1": 1.0,
+          "pass_at_3": 1.0,
+          "pass_rate": 1.0,
+          "individual_results": [
+            true,
+            true,
+            true
+          ],
+          "solutions": [
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }",
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }",
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T15:15:39.780457",
+          "test_name": "StringUtilsTest",
+          "class_name": "StringUtils",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "public class StringUtils {\n        public static String reverseString(String input) {\n            return input == null? null : new StringBuilder(input).reverse().toString();\n        }\n\n        public static boolean isPalindrome(String input) {\n            return input == null? false : input.toLowerCase().equals(reverseString(input));\n        }\n\n        public static int countVowels(String input) {\n            return input == null? 0 : (int) input.toLowerCase().chars().filter(c -> \"aeiou\".contains(Character.toString((char) c))).count();\n        }\n    }",
+            "public class StringUtils {\n        public static String reverseString(String input) {\n            if (input == null)\n                return null;\n            return new StringBuilder(input).reverse().toString();\n        }\n\n        public static boolean isPalindrome(String input) {\n            if (input == null)\n                return false;\n            return input.equalsIgnoreCase(new StringBuilder(input).reverse().toString());\n        }\n\n        public static int countVowels(String input) {\n            if (input == null)\n                return 0;\n            input = input.toLowerCase();\n            int count = 0;\n            for (int i = 0; i < input.length(); i++) {\n                char ch = input.charAt(i);\n                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')\n                    count++;\n            }\n            return count;\n        }\n    }",
+            "public class StringUtils {\n\n        public static String reverseString(String input) {\n            return (input == null)? null : new StringBuilder(input).reverse().toString();\n        }\n\n        public static boolean isPalindrome(String input) {\n            return (input == null)? false : input.toLowerCase().equals(StringUtils.reverseString(input).toLowerCase());\n        }\n\n        public static int countVowels(String input) {\n            return (input == null)? 0 : StringUtils.countVowels(input.toLowerCase());\n        }\n\n        public static int countVowels(String input, boolean ignoreCase) {\n            input = input.toLowerCase();\n            int count = 0;\n            for (char c : input.toCharArray()) {\n                switch (c) {\n                    case 'a':\n                    case 'e':\n                    case 'i':\n                    case 'o':\n                    case 'u':\n                        count++;\n                        break;\n                }\n            }\n            return count;\n        }\n    }"
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-27T15:19:37.053256",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 3,
+      "temperature": 0.8,
+      "total_tests": 2,
+      "total_solutions": 6,
+      "total_passed": 3,
+      "overall_pass_rate": 0.5,
+      "test_results": [
+        {
+          "timestamp": "2025-08-27T15:19:28.331216",
+          "test_name": "CalculatorTest",
+          "class_name": "Calculator",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "total_solutions": 3,
+          "passed_solutions": 3,
+          "pass_at_1": 1.0,
+          "pass_at_3": 1.0,
+          "pass_rate": 1.0,
+          "individual_results": [
+            true,
+            true,
+            true
+          ],
+          "solutions": [
+            "public class Calculator {\n    public int add(int a, int b) {\n        return a + b;\n    }\n}",
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }",
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T15:19:37.053222",
+          "test_name": "StringUtilsTest",
+          "class_name": "StringUtils",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "public class StringUtils {\n        public static String reverseString(String input) {\n            return new StringBuilder(input).reverse().toString();\n        }\n    }",
+            "public String reverseString(String input) {\n        return new StringBuilder(input).reverse().toString();\n    }",
+            "public class StringUtils {\n    public static String reverseString(String input) {\n        return new StringBuilder(input).reverse().toString();\n    }\n}"
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-27T15:27:37.959119",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 3,
+      "temperature": 0.8,
+      "total_tests": 2,
+      "total_solutions": 6,
+      "total_passed": 4,
+      "overall_pass_rate": 0.6666666666666666,
+      "test_results": [
+        {
+          "timestamp": "2025-08-27T15:27:29.032606",
+          "test_name": "CalculatorTest",
+          "class_name": "Calculator",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "total_solutions": 3,
+          "passed_solutions": 3,
+          "pass_at_1": 1.0,
+          "pass_at_3": 1.0,
+          "pass_rate": 1.0,
+          "individual_results": [
+            true,
+            true,
+            true
+          ],
+          "solutions": [
+            "public class Calculator {\n    public int add(int a, int b) {\n        return a + b;\n    }\n}",
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }",
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T15:27:37.959032",
+          "test_name": "StringUtilsTest",
+          "class_name": "StringUtils",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "total_solutions": 3,
+          "passed_solutions": 1,
+          "pass_at_1": 1.0,
+          "pass_at_3": 0.3333333333333333,
+          "pass_rate": 0.3333333333333333,
+          "individual_results": [
+            true,
+            false,
+            false
+          ],
+          "solutions": [
+            "public class StringUtils {\n        public static String reverseString(String input) {\n            if (input == null || input.length() == 0) return input;\n            return new StringBuilder(input).reverse().toString();\n        }\n    }",
+            "public String reverseString(String input) {\n        return new StringBuilder(input).reverse().toString();\n    }",
+            "public class StringUtils {\n    public String reverseString(String input) {\n        // your code here\n        return input;\n    }\n}"
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-27T16:11:14.364206",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 3,
+      "temperature": 0.8,
+      "total_tests": 3,
+      "total_solutions": 9,
+      "total_passed": 4,
+      "overall_pass_rate": 0.4444444444444444,
+      "test_results": [
+        {
+          "timestamp": "2025-08-27T16:10:58.915070",
+          "test_name": "CalculatorTest",
+          "class_name": "Calculator",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "total_solutions": 3,
+          "passed_solutions": 3,
+          "pass_at_1": 1.0,
+          "pass_at_3": 1.0,
+          "pass_rate": 1.0,
+          "individual_results": [
+            true,
+            true,
+            true
+          ],
+          "solutions": [
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }",
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }",
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T16:11:04.854540",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "public class StringUtils {\n        public static boolean isPalindrome(String input) {\n            return input.equals(new StringBuilder(input).reverse().toString());\n        }\n    }",
+            "public boolean isPalindrome(String input) {\n        return input.equals(new StringBuilder(input).reverse().toString());\n    }",
+            "public boolean isPalindrome(String input) {\n        return false;\n    }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T16:11:14.364141",
+          "test_name": "StringUtilsTest",
+          "class_name": "StringUtils",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "total_solutions": 3,
+          "passed_solutions": 1,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.3333333333333333,
+          "pass_rate": 0.3333333333333333,
+          "individual_results": [
+            false,
+            false,
+            true
+          ],
+          "solutions": [
+            "public class StringUtils {\n        public String reverseString(String input) {\n            if (input == null || input.isEmpty())\n                return \"\";\n            else\n                return new StringBuilder(input).reverse().toString();\n        }\n    }",
+            "public class StringUtils {\n        public String reverseString(String input) {\n            return null;\n        }\n    }",
+            "public class StringUtils {\n        public String reverseString(String input) {\n            if (input == null) return null;\n            return new StringBuilder(input).reverse().toString();\n        }\n    }"
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-27T16:29:48.510300",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 3,
+      "temperature": 0.8,
+      "rag_enabled": true,
+      "vector_db_path": "../../vectordb",
+      "total_tests": 3,
+      "total_solutions": 9,
+      "total_passed": 3,
+      "overall_pass_rate": 0.3333333333333333,
+      "test_results": [
+        {
+          "timestamp": "2025-08-27T16:29:30.086458",
+          "test_name": "CalculatorTest",
+          "class_name": "Calculator",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../vectordb",
+          "total_solutions": 3,
+          "passed_solutions": 3,
+          "pass_at_1": 1.0,
+          "pass_at_3": 1.0,
+          "pass_rate": 1.0,
+          "individual_results": [
+            true,
+            true,
+            true
+          ],
+          "solutions": [
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }",
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }",
+            "public class Calculator {\n    public int add(int a, int b) {\n        return a + b;\n    }\n}"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T16:29:35.612026",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../vectordb",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "public class StringUtils {\n        public static boolean isPalindrome(String input) {\n            return false;\n        }\n    }",
+            "public class StringUtils {\n        public static boolean isPalindrome(String input) {\n            return false;\n        }\n    }",
+            "public boolean isPalindrome(String input) {\n        return false;\n    }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T16:29:48.510183",
+          "test_name": "StringUtilsTest",
+          "class_name": "StringUtils",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../vectordb",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "public String reverseString(String input) {\n        return new StringBuilder(input).reverse().toString();\n    }",
+            "public class StringUtils {\n        public String reverseString(String input) {\n            return new StringBuilder(input).reverse().toString();\n        }\n    }",
+            "public class StringUtils {\n        public static String reverseString(String input) {\n            if (input == null || input.length() == 0) return \"\";\n\n            char[] carray = input.toCharArray();\n            for (int i = 0; i < carray.length / 2; i++) {\n                char tmp = carray[i];\n                carray[i] = carray[carray.length - i - 1];\n                carray[carray.length - i - 1] = tmp;\n            }\n            return new String(carray);\n        }\n    }"
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-27T16:32:56.394621",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 3,
+      "temperature": 0.8,
+      "rag_enabled": true,
+      "vector_db_path": "../../vectordb",
+      "total_tests": 3,
+      "total_solutions": 9,
+      "total_passed": 3,
+      "overall_pass_rate": 0.3333333333333333,
+      "test_results": [
+        {
+          "timestamp": "2025-08-27T16:32:42.978331",
+          "test_name": "CalculatorTest",
+          "class_name": "Calculator",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../vectordb",
+          "total_solutions": 3,
+          "passed_solutions": 3,
+          "pass_at_1": 1.0,
+          "pass_at_3": 1.0,
+          "pass_rate": 1.0,
+          "individual_results": [
+            true,
+            true,
+            true
+          ],
+          "solutions": [
+            "public class Calculator {\n    public int add(int a, int b) {\n        return a + b;\n    }\n}",
+            "public class Calculator {\n    public int add(int a, int b) {\n        return a + b;\n    }\n}",
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T16:32:49.469250",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../vectordb",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "public class StringUtils {\n        public boolean isPalindrome(String input) {\n            return input.equals(new StringBuilder(input).reverse().toString());\n        }\n    }",
+            "public class StringUtils {\n        public static boolean isPalindrome(String input) {\n            return false;\n        }\n    }",
+            "public class StringUtils {\n        public boolean isPalindrome(String input) {\n            return false;\n        }\n    }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T16:32:56.394504",
+          "test_name": "StringUtilsTest",
+          "class_name": "StringUtils",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../vectordb",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "public String reverseString(String input) {\n        if (input == null) return null;\n        StringBuilder stringBuilder = new StringBuilder(input);\n        return stringBuilder.reverse().toString();\n    }",
+            "public class StringUtils {\n        public static String reverseString(String input) {\n            return new StringBuilder(input).reverse().toString();\n        }\n    }",
+            "public class StringUtils {\n        // your methods here\n    }"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_runs": 6,
+    "models_tested": [
+      "../../outputs-full/checkpoint-110"
+    ],
+    "tests_run": [
+      "CalculatorTest",
+      "StringUtilsTest",
+      "PalindromeTest"
+    ]
+  }
+}
