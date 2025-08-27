@@ -1,0 +1,19 @@
+Write a complete Java class named ArrayProcessor that:
+1. Has a public class declaration: `public class ArrayProcessor {`
+2. Has a public instance method `findMax(int[] array)` that returns the maximum value in the array
+3. Has a public instance method `findMin(int[] array)` that returns the minimum value in the array
+4. Has a public instance method `calculateAverage(int[] array)` that returns the average as a double
+5. Has a public instance method `removeDuplicates(int[] array)` that returns a new array with duplicates removed (order preserved)
+6. Handles edge cases: null arrays should throw IllegalArgumentException, empty arrays should return appropriate values
+
+The class should work with JUnit tests where:
+- Methods handle various array sizes and edge cases
+- Exception handling is tested for null inputs
+- Precision is important for average calculations
+
+Example structure:
+```java
+public class ArrayProcessor {
+    // your methods here
+}
+```

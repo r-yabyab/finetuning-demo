@@ -1,0 +1,16 @@
+Write a complete Java class named Calculator that:
+1. Has a public class declaration: `public class Calculator {`
+2. Has a public instance method `add(int a, int b)` which returns the sum of `a` and `b`
+3. Includes proper opening and closing braces for the class
+4. Can be instantiated and used in unit tests
+
+The class should be designed to work with JUnit tests where:
+- An instance is created: `Calculator calc = new Calculator();`
+- The add method is called on the instance: `calc.add(2, 3)`
+
+Example structure:
+```java
+public class Calculator {
+    // your add method here
+}
+```

@@ -1,0 +1,17 @@
+Write a complete Java class named StringUtils that:
+1. Has a public class declaration: `public class StringUtils {`
+2. Has a public instance method `reverseString(String input)` that returns the reversed version of the input string
+3. Has a public instance method `isPalindrome(String input)` that returns true if the string reads the same forwards and backwards (case-insensitive)
+4. Has a public instance method `countVowels(String input)` that returns the number of vowels (a, e, i, o, u) in the string (case-insensitive)
+5. Handles null inputs appropriately (return null for reverseString, false for isPalindrome, 0 for countVowels)
+
+The class should work with JUnit tests where:
+- Methods are called on an instance: `StringUtils utils = new StringUtils();`
+- Edge cases like null, empty strings, and special characters are tested
+
+Example structure:
+```java
+public class StringUtils {
+    // your methods here
+}
+```

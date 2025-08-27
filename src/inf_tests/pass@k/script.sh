@@ -1,4 +1,4 @@
-sudo apt install openjdk-21-jdk
+sudo apt install openjdk-21-jdk -y
 
 # Download JUnit 5 platform and API jars, need to point to this to run junit tests
 # Example locations, adjust paths
