@@ -432,10 +432,366 @@
           ]
         }
       ]
+    },
+    {
+      "timestamp": "2025-08-27T16:35:54.952779",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 3,
+      "temperature": 0.8,
+      "rag_enabled": true,
+      "vector_db_path": "../../vectordb",
+      "total_tests": 3,
+      "total_solutions": 9,
+      "total_passed": 3,
+      "overall_pass_rate": 0.3333333333333333,
+      "test_results": [
+        {
+          "timestamp": "2025-08-27T16:35:40.304114",
+          "test_name": "CalculatorTest",
+          "class_name": "Calculator",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../vectordb",
+          "total_solutions": 3,
+          "passed_solutions": 3,
+          "pass_at_1": 1.0,
+          "pass_at_3": 1.0,
+          "pass_rate": 1.0,
+          "individual_results": [
+            true,
+            true,
+            true
+          ],
+          "solutions": [
+            "public class Calculator {\n    public int add(int a, int b) {\n        return a + b;\n    }\n}",
+            "public class Calculator {\n    public int add(int a, int b) {\n        return a + b;\n    }\n}",
+            "public class Calculator {\n    public int add(int a, int b) {\n        return a + b;\n    }\n}"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T16:35:45.767433",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../vectordb",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "public boolean isPalindrome(String input) {\n        return input.equals(reverseString(input));\n    }",
+            "public class StringUtils {\n        // your methods here\n    }",
+            "public class StringUtils {\n        public boolean isPalindrome(String input) {\n            return input.equals(reverseString(input));\n        }\n    }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T16:35:54.952706",
+          "test_name": "StringUtilsTest",
+          "class_name": "StringUtils",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../vectordb",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "public String reverseString(String input) {\n        if (input == null) return null;\n        char[] chars = input.toCharArray();\n        Arrays.sort(chars);\n        return new String(chars);\n    }",
+            "public class StringUtils {\n        public static String reverseString(String input) {\n            return new StringBuilder(input).reverse().toString();\n        }\n    }",
+            "public class StringUtils {\n        public String reverseString(String input) {\n            return new StringBuilder(input).reverse().toString();\n        }\n    }"
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-27T16:38:17.288575",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 3,
+      "temperature": 0.8,
+      "rag_enabled": true,
+      "vector_db_path": "../../vectordb",
+      "total_tests": 3,
+      "total_solutions": 9,
+      "total_passed": 5,
+      "overall_pass_rate": 0.5555555555555556,
+      "test_results": [
+        {
+          "timestamp": "2025-08-27T16:38:00.545508",
+          "test_name": "CalculatorTest",
+          "class_name": "Calculator",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../vectordb",
+          "total_solutions": 3,
+          "passed_solutions": 3,
+          "pass_at_1": 1.0,
+          "pass_at_3": 1.0,
+          "pass_rate": 1.0,
+          "individual_results": [
+            true,
+            true,
+            true
+          ],
+          "solutions": [
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }",
+            "public class Calculator {\n    public int add(int a, int b) {\n        return a + b;\n    }\n}",
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T16:38:06.996421",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../vectordb",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "public class StringUtils {\n        public static boolean isPalindrome(String input) {\n            return input.equalsIgnoreCase(new StringBuilder(input).reverse().toString());\n        }\n    }",
+            "public boolean isPalindrome(String input) {\n        return false;\n    }",
+            "public class StringUtils {\n        public boolean isPalindrome(String input) {\n            return input.equals(reverseString(input));\n        }\n    }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T16:38:17.288491",
+          "test_name": "StringUtilsTest",
+          "class_name": "StringUtils",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../vectordb",
+          "total_solutions": 3,
+          "passed_solutions": 2,
+          "pass_at_1": 1.0,
+          "pass_at_3": 0.6666666666666666,
+          "pass_rate": 0.6666666666666666,
+          "individual_results": [
+            true,
+            true,
+            false
+          ],
+          "solutions": [
+            "public class StringUtils {\n        public String reverseString(String input) {\n            if (input == null) {\n                return null;\n            } else {\n                return new StringBuilder(input).reverse().toString();\n            }\n        }\n    }",
+            "public class StringUtils {\n        public static String reverseString(String input) {\n            if (input == null) return null;\n            else return new StringBuilder(input).reverse().toString();\n        }\n    }",
+            "public class StringUtils {\n    public String reverseString(String input) {\n        return new StringBuilder(input).reverse().toString();\n    }\n}"
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-27T16:43:35.223717",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 3,
+      "temperature": 0.8,
+      "rag_enabled": true,
+      "vector_db_path": "w:/Users/cayab/dataset-QA-prep/rag/vectordb",
+      "total_tests": 3,
+      "total_solutions": 9,
+      "total_passed": 3,
+      "overall_pass_rate": 0.3333333333333333,
+      "test_results": [
+        {
+          "timestamp": "2025-08-27T16:43:19.811808",
+          "test_name": "CalculatorTest",
+          "class_name": "Calculator",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "w:/Users/cayab/dataset-QA-prep/rag/vectordb",
+          "total_solutions": 3,
+          "passed_solutions": 3,
+          "pass_at_1": 1.0,
+          "pass_at_3": 1.0,
+          "pass_rate": 1.0,
+          "individual_results": [
+            true,
+            true,
+            true
+          ],
+          "solutions": [
+            "public class Calculator {\n    public int add(int a, int b) {\n        return a + b;\n    }\n}",
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }",
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T16:43:26.473124",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "w:/Users/cayab/dataset-QA-prep/rag/vectordb",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "public class StringUtils {\n        public static boolean isPalindrome(String input) {\n            return false;\n        }\n    }",
+            "public class StringUtils {\n        public boolean isPalindrome(String input) {\n            return false;\n        }\n    }",
+            "public class StringUtils {\n        public static boolean isPalindrome(String input) {\n            return input.equals(new StringBuilder(input).reverse().toString());\n        }\n    }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T16:43:35.223626",
+          "test_name": "StringUtilsTest",
+          "class_name": "StringUtils",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "w:/Users/cayab/dataset-QA-prep/rag/vectordb",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "public class StringUtils {\n        public String reverseString(String input) {\n            return new StringBuilder(input).reverse().toString();\n        }\n    }",
+            "public class StringUtils {\n        public static String reverseString(String input) {\n            // Reverse input string\n            return null;\n        }\n    }",
+            "public String reverseString(String input) {\n        if (input == null)\n            return null;\n\n        StringBuilder inputBuilder = new StringBuilder(input);\n        return inputBuilder.reverse().toString();\n    }"
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-27T16:53:51.576773",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 3,
+      "temperature": 0.8,
+      "rag_enabled": true,
+      "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+      "total_tests": 3,
+      "total_solutions": 9,
+      "total_passed": 0,
+      "overall_pass_rate": 0.0,
+      "test_results": [
+        {
+          "timestamp": "2025-08-27T16:53:30.135111",
+          "test_name": "CalculatorTest",
+          "class_name": "Calculator",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =",
+            "= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =",
+            "= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ="
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T16:53:44.328601",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "toLowerCase();\n        final int len = length;\n        for (int i = offset; i < len; ++i) {\n            if (value[i] == chAsByte) {\n                return i - offset;\n            }\n        }\n        return INDEX_NOT_FOUND;\n    }",
+            "toLowerCase() {\n        return toLowerCase();\n    }",
+            "toLowerCase(), so any comparison is case-insensitive.\n        @return the value of the comparison. If the strings are equal, the result is 0; if the first string is\n        lexicographically less than the second string, the result is -1; and if the first string is\n        lexicographically greater than the second string, the result is 1.\n        @throws NullPointerException if {@code o} is {@code null}.\n        @see String#compareToIgnoreCase\n        */\n        public int compareToIgnoreCase(@Nullable Object o) {\n            return compareToIgnoreCase(o);\n        }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T16:53:51.576707",
+          "test_name": "StringUtilsTest",
+          "class_name": "StringUtils",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            ") {\n            return true;\n        }\n        i += Character.charCount(codePoint);\n      }\n      return false;\n    }",
+            ") {\n          return true;\n        }\n        i += Character.charCount(codePoint);\n      }\n      return false;\n    }",
+            ") {\n          return true;\n        }\n        i += Character.charCount(codePoint);\n      }\n      return false;\n    }\n  }"
+          ]
+        }
+      ]
     }
   ],
   "summary": {
-    "total_runs": 6,
+    "total_runs": 10,
     "models_tested": [
       "../../outputs-full/checkpoint-110"
     ],

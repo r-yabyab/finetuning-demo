@@ -17,7 +17,7 @@ pass_k_num = 3
 model_path = "../../outputs-full/checkpoint-110"
 
 # RAG Configuration
-VECTOR_DB_PATH = "../../vectordb"  # Adjust path to your vector database
+VECTOR_DB_PATH = "../../../../dataset-QA-prep/rag/vectordb/"  # Correct path to your vector database
 COLLECTION_NAME = "java_projects"
 
 # Initialize embedding model for RAG
@@ -93,17 +93,30 @@ def get_test_info(test_name: str = None) -> List[Dict[str, str]]:
 def get_rag_context(query: str, top_k: int = 3, enable_rag: bool = True):
     """Get relevant context from RAG database"""
     if not enable_rag:
+        print("RAG is disabled")
         return ""
         
     try:
         # Check if vector database exists
         if not os.path.exists(VECTOR_DB_PATH):
+            print(f"Vector database not found at: {VECTOR_DB_PATH}")
             return ""
-            
+        
+        print(f"Loading vector database from: {VECTOR_DB_PATH}")
+        
         # Load vector database
         db = chromadb.PersistentClient(path=VECTOR_DB_PATH)
         collection = db.get_or_create_collection(name=COLLECTION_NAME)
         
+        # Check collection size
+        collection_count = collection.count()
+        print(f"Collection '{COLLECTION_NAME}' has {collection_count} documents")
+        
+        if collection_count == 0:
+            print("Collection is empty - no RAG context available")
+            return ""
+        
+        print(f"Querying for: {query[:100]}...")
         query_embedding = embed_model.encode([query])
         results = collection.query(
             query_embeddings=query_embedding.tolist(),
@@ -111,10 +124,18 @@ def get_rag_context(query: str, top_k: int = 3, enable_rag: bool = True):
         )
         
         if results['documents'] and results['documents'][0]:
-            return "\n".join(results['documents'][0])
-        return ""
+            context = "\n".join(results['documents'][0])
+            print(f"\n--- RAG Context Retrieved (top {len(results['documents'][0])} results) ---")
+            print(context[:500] + "..." if len(context) > 500 else context)
+            print("--- End RAG Context ---\n")
+            return context
+        else:
+            print("Query returned no results")
+            return ""
     except Exception as e:
-        print(f"Warning: Could not retrieve RAG context: {e}")
+        print(f"Error retrieving RAG context: {e}")
+        import traceback
+        traceback.print_exc()
         return ""
 
 def load_model_and_tokenizer():
