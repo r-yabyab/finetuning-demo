@@ -18,7 +18,14 @@ model_path = "../../outputs-full/checkpoint-110"
 
 # RAG Configuration
 VECTOR_DB_PATH = "../../../../dataset-QA-prep/rag/vectordb/"  # Correct path to your vector database
-COLLECTION_NAME = "java_projects"
+# COLLECTION_NAME = "java_projects"
+# COLLECTION_NAME = "java_projects_extra"
+# COLLECTION_NAME = "java_projects_extra_nometadata"
+# COLLECTION_NAME = "java_projects_extra_nometadata_leetcode_alone"
+COLLECTION_NAME = "java_langchain_splitter111"
+
+
+
 
 # Initialize embedding model for RAG
 embed_model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -90,7 +97,7 @@ def get_test_info(test_name: str = None) -> List[Dict[str, str]]:
     list_available_tests()
     return list(test_pairs.values())
 
-def get_rag_context(query: str, top_k: int = 3, enable_rag: bool = True):
+def get_rag_context(query: str, top_k: int = 4, enable_rag: bool = True):
     """Get relevant context from RAG database"""
     if not enable_rag:
         print("RAG is disabled")

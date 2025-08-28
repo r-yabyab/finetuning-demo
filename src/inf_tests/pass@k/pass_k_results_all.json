@@ -788,10 +788,455 @@
           ]
         }
       ]
+    },
+    {
+      "timestamp": "2025-08-27T17:05:04.750842",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 3,
+      "temperature": 0.8,
+      "rag_enabled": true,
+      "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+      "total_tests": 3,
+      "total_solutions": 9,
+      "total_passed": 0,
+      "overall_pass_rate": 0.0,
+      "test_results": [
+        {
+          "timestamp": "2025-08-27T17:04:36.144838",
+          "test_name": "CalculatorTest",
+          "class_name": "Calculator",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =",
+            "= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =",
+            "= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ="
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T17:04:52.019119",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "to toUpperCase.\n         */\n        public AsciiString toUpperCase() {\n            return AsciiStringUtil.toUpperCase(this);\n        }\n\n        @NonNull\n        @Override\n        public String toString() {\n            return value;\n        }\n    }",
+            "to toLowerCase.\n     */\n    public static AsciiString toLowerCase(AsciiString string) {\n        return AsciiStringUtil.toLowerCase(string);\n    }",
+            "to toLowerCase()\n    {\n        return c2b0(toLowerCase().value, offset, length);\n    }\n\n    /**\n     * Converts this string to a byte array in which each character in this string is converted to a byte using\n     * the default {@link AsciiConverter}. Note that this method may allocate memory when calling\n     * {@link AsciiConverter#toBytes(String)} and that the returned byte array may not be equal to the value field\n     * of this string.\n     *\n     * @return a byte array containing the converted characters.\n     */\n    public byte[] toByteArray() {\n        return AsciiConverter.toBytes(this);\n    }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T17:05:04.750731",
+          "test_name": "StringUtilsTest",
+          "class_name": "StringUtils",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            ") {\n                int i;\n                for (i = start; i < end; ) {\n                    int codePoint = Character.codePointAt(text, i);\n                    if (((1 << Character.getDirection(codePoint)) & RTLMask)!= 0) {\n                        return true;\n                    }\n                    i += Character.charCount(codePoint);\n                }\n                return false;\n            }",
+            ") {\n            throw new IllegalArgumentException(\"RTLMask invalid\");\n        }\n      return false;\n    }\n  }",
+            ") {\n                // If direction is not neutral and RTL mask is set\n                if ((direction & DIRECTION_NEUTRAL)!= DIRECTION_NEUTRAL && (1 << direction) & RTLMask) {\n                    return true;\n                }\n            }\n        }\n        return false;\n    }"
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-27T17:57:06.324406",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 3,
+      "temperature": 0.8,
+      "rag_enabled": true,
+      "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+      "total_tests": 3,
+      "total_solutions": 9,
+      "total_passed": 0,
+      "overall_pass_rate": 0.0,
+      "test_results": [
+        {
+          "timestamp": "2025-08-27T17:56:31.764448",
+          "test_name": "CalculatorTest",
+          "class_name": "Calculator",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            ".wrap(buf.getCharSequence(1, bytes, charset)));\n        buf.release();\n    }",
+            ".wrap(buf.getCharSequence(1, bytes, charset)));\n        buf.release();\n    }",
+            ".wrap(buf.getCharSequence(1, bytes, charset)));\n    }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T17:57:03.405756",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "string string\n     * @throws NullPointerException if {@code prefix} is {@code null}.\n     */\n    private boolean startsWith(CharSequence prefix, int start) {\n        if (prefix.length() > str.length() - start) {\n            return false;\n        }\n        for (int i = 0; i < prefix.length(); i++) {\n            if (str.charAt(start + i)!= prefix.charAt(i)) {\n                return false;\n            }\n        }\n        return true;\n    }\n}\n```",
+            "string string\n     * @throws NullPointerException if {@code prefix} is {@code null}.\n     */\n    public boolean startsWith(CharSequence prefix, int start) {\n        if (prefix.length() > value.length() - start) return false;\n        for (int i = 0; i < prefix.length(); i++) {\n            if (prefix.charAt(i)!= value.charAt(start + i)) {\n                return false;\n            }\n        }\n        return true;\n    }\n\n    public boolean check(String x, String s) {\n        if (s.length() % x.length()!= 0) return false;\n        int n = s.length() / x.length();\n        for (int i = 0; i < n; i++)\n            if (!s.startsWith(x + i * x.length())) return false;\n        return true;\n    }\n\n}\n\n```",
+            "string string\n     * @throws NullPointerException if {@code prefix} is {@code null}.\n     */\n    public boolean startsWith(CharSequence prefix, int start) {\n        int index = start;\n        if (prefix.length() > this.length() - index) {\n            return false;\n        }\n        while (true) {\n            if (this.charAt(index)!= prefix.charAt(prefix.length() - 1)) {\n                return false;\n            }\n            index++;\n            if (index == this.length()) {\n                return true;\n            }\n            if (prefix.length() == 1) {\n                return this.charAt(index) == prefix.charAt(0);\n            } else {\n                if (this.charAt(index)!= prefix.charAt(prefix.length() - 2)) {\n                    return false;\n                }\n            }\n        }\n    }\n    private boolean check(String x, String s) {\n        int n = s.length();\n        for (int i = 0; i < n; i += x.length())\n            if (!s.substring(i, i + x.length()).equals(x)) return false;\n        return true;\n    }\n}\n```"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T17:57:06.324342",
+          "test_name": "StringUtilsTest",
+          "class_name": "StringUtils",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "````",
+            "````",
+            "```"
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-27T18:15:08.851458",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 3,
+      "temperature": 0.8,
+      "rag_enabled": true,
+      "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+      "total_tests": 3,
+      "total_solutions": 9,
+      "total_passed": 0,
+      "overall_pass_rate": 0.0,
+      "test_results": [
+        {
+          "timestamp": "2025-08-27T18:12:28.683656",
+          "test_name": "CalculatorTest",
+          "class_name": "Calculator",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "(char[] value, Charset charset), int start, int length) {\n        CharBuffer cbuf = CharBuffer.wrap(value, start, length);\n        CharsetEncoder encoder = CharsetUtil.encoder(charset);\n        CharBuffer copy = encoder.encode(cbuf, true);\n        return new AsciiString(copy.toString(), charset);\n    }",
+            "(char[] data, Charset charset, int start, int length), Charset charset, int start, int length) {\n        CharBuffer cbuf = CharBuffer.wrap(data, start, length);\n        CharsetEncoder encoder = CharsetUtil.encoder(charset);\n        if (encoder.canEncode(cbuf.toString())) {\n            cbuf = cbuf.onEncoder(encoder);\n        } else {\n            throw new IllegalArgumentException(\n                \"Failed to encode value \\\"\" + cbuf.toString() + \"\\\" in charset \\\"\" + charset.name() + \"\\\"\");\n        }\n        data = cbuf.array();\n        length = cbuf.remaining();\n        start = 0;\n    }",
+            "(charArray), charset, index, length) {\n        return super(charArray, charset, index, length);\n    }\n\n    public static AsciiString getInternalPropertyValueFromValue(Object object, String key, String value) {\n        return (AsciiString) object;\n    }"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T18:14:02.494302",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "@ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @",
+            "@ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @",
+            "@ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T18:15:08.851392",
+          "test_name": "StringUtilsTest",
+          "class_name": "StringUtils",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "a a a\n     * @param string the string to compare.\n     * @return {@code true} if the specified string is a prefix of this string, {@code false} otherwise\n     */\n    @Override\n    public boolean startsWith(@Nullable CharSequence string) {\n        return startsWith(string, 0);\n    }\n\n    /**\n     * Compares the specified string to this string, starting at the specified offset, to determine if the specified\n     * string is a suffix.\n     *\n     * @param suffix the string to look for.\n     * @return {@code true} if the specified string is a suffix of this string, {@code false} otherwise\n     * @throws NullPointerException if {@code suffix} is {@code null}.\n     */\n    public boolean endsWith(CharSequence suffix) {\n        return endsWith(suffix, 0);\n    }\n\n    /**\n     * Compares the specified string to this string, starting at the specified offset, to determine if the specified\n     * string is a suffix.\n     *\n     * @param suffix the string to look for.\n     * @return {@code true} if the specified string is a suffix of this string, {@code false} otherwise\n     * @throws NullPointerException if {@code suffix} is {@code null}.\n     */\n    @Override\n    public boolean endsWith(@Nullable CharSequence suffix) {\n        return endsWith(suffix, 0);\n    }\n\n    @Override\n    public int indexOf(CharSequence string, int from) {\n        return indexOf(string, from, string.length() - from);\n    }\n\n    @Override\n    public boolean contains(CharSequence string) {\n        return contains(string, 0);\n    }\n\n    @Override\n    public boolean contains(CharSequence string, int from) {\n        return indexOf(string, from)!= -1;\n    }\n\n    @Override\n    public boolean isEmpty() {\n        return value.length() == 0;\n    }\n\n    @Override\n    public int length() {\n        return value.length();\n    }\n\n    @Override\n    public boolean equals(Object o) {\n        if (o == null ||!(o instanceof CharSequence)) {\n            return false;\n        }\n\n        return value.equals(((CharSequence) o).toString());\n    }\n\n    @Override\n    public int hashCode() {\n        return value.hashCode();\n    }\n\n    @Override\n    public String toString() {\n        return value.toString();\n    }\n\n    @Override\n    public CharSequence subSequence(int start, int end) {\n        return AsciiString.valueOf(value, start, end);",
+            "a a\n     * @throws NullPointerException if {@code prefix} is {@code null}.\n     */\n    public boolean endsWith(CharSequence suffix) {\n        return endsWith(suffix, 0);\n    }",
+            "a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a"
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-27T18:29:36.017401",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 3,
+      "temperature": 0.8,
+      "rag_enabled": true,
+      "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+      "total_tests": 3,
+      "total_solutions": 9,
+      "total_passed": 0,
+      "overall_pass_rate": 0.0,
+      "test_results": [
+        {
+          "timestamp": "2025-08-27T18:28:15.987235",
+          "test_name": "CalculatorTest",
+          "class_name": "Calculator",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            ".left.left.val;\n    }\n}",
+            ".left.right;\n            } else if (c =='') {\n                // skip space\n            } else {\n                throw new IllegalArgumentException(\"Invalid expression: \" + s);\n            }\n        }\n\n        return result;\n    }\n}",
+            ".left;\n    }\n    public BSTIterator(TreeNode root) {\n        pushAll(root);\n    }\n\n    public int next() {\n        TreeNode node = stack.pop();\n        if (node.right!= null) {\n            pushAll(node.right);\n        }\n        return node.val;\n    }\n\n    public boolean hasNext() {\n        return stack.size()!= 0;\n    }\n}"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T18:29:02.948451",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            ".length()) return \"\";\n        for (int i = 0; i < len; i++) {\n            if (s.charAt(i)!= s.charAt(len - 1 - i)) return \"\";\n        }\n        return s;\n    }\n}\nclass LongestCommonSubstring {\n    public String longestCommonSubstring(String s1, String s2) {\n        int m = s1.length(), n = s2.length();\n        int[][] dp = new int[m + 1][n + 1];\n        String res = \"\";\n        for (int i = 1; i <= m; i++) {\n            for (int j = 1; j <= n; j++) {\n                if (s1.charAt(i - 1) == s2.charAt(j - 1)) {\n                    dp[i][j] = dp[i - 1][j - 1] + 1;\n                    if (dp[i][j] > dp[i - 1][j] && dp[i][j] > dp[i][j - 1]) {\n                        res = s1.substring(i - dp[i][j], i);\n                    }\n                }\n            }\n        }\n        return res;\n    }\n}\n```",
+            ".length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length.length",
+            ".length)\n        return \"\";\n    }\n}\n```"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T18:29:36.017307",
+          "test_name": "StringUtilsTest",
+          "class_name": "StringUtils",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "](]`)]\")",
+            "](]]",
+            "](]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]"
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-27T20:00:54.731799",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 3,
+      "temperature": 0.8,
+      "rag_enabled": true,
+      "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+      "total_tests": 3,
+      "total_solutions": 9,
+      "total_passed": 0,
+      "overall_pass_rate": 0.0,
+      "test_results": [
+        {
+          "timestamp": "2025-08-27T19:59:02.116789",
+          "test_name": "CalculatorTest",
+          "class_name": "Calculator",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            ";\n;\n    }\n}",
+            ";\n    }\n}",
+            ";\n;"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T20:00:08.040304",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "//  check if x + x * (n - k) / k is a substring of both\n            //  if (check(x + x * (n - k) / k, str1) && check(x + x * (n - k) / k, str2))\n            //    return x + x * (n - k) / k;\n        }\n        return \"\";\n    }\n\n    public boolean check(String x, String str) {\n        int n = str.length();\n        for (int i = 0; i + n <= str.length(); i++) {\n            String y = str.substring(i, i + n);\n            if (x.equals(y))\n                return true;\n        }\n        return false;\n    }\n}\npublic class LongestPalindromeByConcatenatingTwoLetterWordsTest {\n    LongestPalindromeByConcatenatingTwoLetterWords LongestPalindromeByConcatenatingTwoLetterWords = new LongestPalindromeByConcatenatingTwoLetterWords();\n\n    @Test\n    void Example1() {\n        String[] words = {\"lc\", \"cl\", \"gg\"};\n        int results = LongestPalindromeByConcatenatingTwoLetterWords.longestPalindrome(words);\n        int expectedResults = 6;\n\n        Assertions.assertEquals(expectedResults, results);\n    }\n\n    @Test\n    void Example2() {\n        String[] words = {\"ab\", \"ty\", \"yt\", \"lc\", \"cl\", \"ab\"};\n        int results = LongestPalindromeByConcatenatingTwoLetterWords.longestPalindrome(words);\n        int expectedResults = 8;\n\n        Assertions.assertEquals(expectedResults, results);\n    }\n\n    @Test\n    void Example3() {\n        String[] words = {\"cc\", \"ll\", \"xx\"};\n        int results = LongestPalindromeByConcatenatingTwoLetterWords.longestPalindrome(words);\n        int expectedResults = 2;\n\n        Assertions.assertEquals(expectedResults, results);\n    }\n}\npublic class LongestPalindromeByConcatenatingTwoLetterWordsTest {\n    LongestPalindromeByConcatenatingTwoLetterWords LongestPalindromeByConcatenatingTwoLetterWords = new LongestPalindromeByConcatenatingTwoLetterWords();\n\n    @Test\n    void Example1() {\n        String[] words = {\"lc\", \"cl\", \"gg\"};\n        int results = LongestPalindromeByConcatenatingTwoLetterWords.longestPalindrome(words);\n        int expectedResults = 6;\n\n        Assertions.assertEquals(expectedResults, results);\n    }\n\n    @Test\n    void Example2() {",
+            "int n1 = str1.length(), n2 = str2.length();\n        for (int i = Math.min(n1, n2); i >= 1; i--) {\n            String x = str1.substring(0, i);\n            if (check(x, str1) && check(x, str2))\n                return x;\n        }\n        return \"\";\n    }\n\n    public boolean check(String x, String str) {\n        if (str.length() % x.length()!= 0)\n            return false;\n        for (int i = 0; i < str.length(); i += x.length()) {\n            String y = str.substring(i, i + x.length());\n            if (!y.equals(x))\n                return false;\n        }\n        return true;\n    }\n}",
+            "// if x is a substring of y\n            if (check(x, y))\n                return x;\n        }\n        return \"\";\n    }\n\n    private boolean check(String x, String y) {\n        return y.startsWith(x) && y.endsWith(x) && y.length() % x.length() == 0;\n    }\n}\nclass LongestPalindromicSubstring {\n    public String longestPalindrome(String s) {\n        if (s == null || s.length() < 1) return \"\";\n        int n = s.length();\n        boolean[][] dp = new boolean[n][n];\n        for (int len = 1; len <= n; len++) {\n            for (int i = 0, j = len - 1; j < n; i++, j++) {\n                dp[i][j] = s.charAt(i) == s.charAt(j) && (len == 1 || dp[i + 1][j - 1]);\n            }\n        }\n        for (int i = 0; i < n; i++) {\n            if (dp[i][i]) return s.substring(i, i + 1);\n        }\n        return \"\";\n    }\n}"
+          ]
+        },
+        {
+          "timestamp": "2025-08-27T20:00:54.731724",
+          "test_name": "StringUtilsTest",
+          "class_name": "StringUtils",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "0\n        }\n        while (unpaired > 0 && map.containsKey(map.keySet().toArray()[map.keySet().size() - 1])) {\n            if (map.get(map.keySet().toArray()[map.keySet().size() - 1]) > 0) {\n                res += 2;\n                unpaired--;\n                map.put(map.keySet().toArray()[map.keySet().size() - 1], map.get(map.keySet().toArray()[map.keySet().size() - 1]) - 1);\n            } else {\n                map.put(map.keySet().toArray()[map.keySet().size() - 1], map.get(map.keySet().toArray()[map.keySet().size() - 1]) + 1);\n                unpaired++;\n            }\n        }\n        return res;\n    }\n}\nclass MaxConsecutiveOnes {\n    public int findMaxConsecutiveOnes(int[] nums) {\n        int res = 0;\n        for (int i = 0; i < nums.length; i++) {\n            int cur = 0;\n            for (int j = i; j < nums.length; j++) {\n                if (nums[j] == 1) {\n                    cur++;\n                } else {\n                    break;\n                }\n            }\n            res = Math.max(res, cur);\n        }\n        return res;\n    }\n}\nclass MissingNumber {\n    public int missingNumber(int[] nums) {\n        int n = nums.length;\n        int expectedSum = n * (n - 1) / 2;\n        int actualSum = 0;\n        for (int i : nums) {\n            actualSum += i;\n        }\n        return expectedSum - actualSum;\n    }\n}\nclass SubarraySumEqualsTarget {\n    public boolean findSubarraySumEqualsTarget(int[] nums, int target) {\n        int n = nums.length;\n        int expectedSum = n * (n - 1) / 2;\n        int actualSum = 0;\n        for (int i : nums) {\n            actualSum += i;\n        }\n        return actualSum - expectedSum == target;\n    }\n}\nclass SubarraySumEqualsK {\n    public int[] findSubarraySumEqualsK(int[] nums, int k) {\n        int n = nums.length;\n        int expectedSum = n * (n - 1) / 2;\n        int actualSum = 0;\n        for (int i : nums) {\n            actualSum += i;\n        }\n        if (actualSum - expectedSum == k",
+            "0",
+            "0\n    public int longestPalindrome(String[] words) {\n        Map<String, Integer> map = new HashMap<>();\n        int unpaired = 0, res = 0;\n        for (String word : words) {\n            if (!map.containsKey(word)) map.put(word, 0);\n            if (word.charAt(0) == word.charAt(1)) {\n                if (map.get(word) > 0) {\n                    unpaired--;\n                    map.put(word, map.get(word) - 1);\n                    res += 4;\n                } else {\n                    map.put(word, map.get(word) + 1);\n                    unpaired++;\n                }\n            } else {\n                String rev = Character.toString(word.charAt(1)) + Character.toString(word.charAt(0));\n                if (map.containsKey(rev)) {\n                    res += 4;\n                    unpaired--;\n                    map.put(rev, map.get(rev) - 1);\n                }\n            }\n        }\n        return res + (unpaired * 2);\n    }\n}"
+          ]
+        }
+      ]
     }
   ],
   "summary": {
-    "total_runs": 10,
+    "total_runs": 15,
     "models_tested": [
       "../../outputs-full/checkpoint-110"
     ],
