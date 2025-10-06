@@ -10,7 +10,8 @@ dtype = None
 load_in_4bit = True
 
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name = "outputs-cpt/checkpoint-47",
+    # model_name = "outputs-cpt/checkpoint-47",
+    model_name = "outputs-self/checkpoint-476",
     max_seq_length = max_seq_length,
     dtype = dtype,
     load_in_4bit = load_in_4bit,

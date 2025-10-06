@@ -1,3 +1,4 @@
+Check if string isPalindrome. 
 Write a complete Java class named StringUtils that:
 1. Has a public class declaration: `public class StringUtils {`
 2. Has a public instance method `isPalindrome(String input)` that checks if input string is a palindrome

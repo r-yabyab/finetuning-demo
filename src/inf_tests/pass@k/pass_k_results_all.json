@@ -1233,10 +1233,311 @@
           ]
         }
       ]
+    },
+    {
+      "timestamp": "2025-09-03T17:40:39.708566",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 3,
+      "temperature": 0.8,
+      "rag_enabled": true,
+      "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+      "total_tests": 3,
+      "total_solutions": 9,
+      "total_passed": 2,
+      "overall_pass_rate": 0.2222222222222222,
+      "test_results": [
+        {
+          "timestamp": "2025-09-03T17:40:25.826088",
+          "test_name": "CalculatorTest",
+          "class_name": "Calculator",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 1,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.3333333333333333,
+          "pass_rate": 0.3333333333333333,
+          "individual_results": [
+            false,
+            true,
+            false
+          ],
+          "solutions": [
+            "",
+            "public class Calculator {\n        public int add(int a, int b) {\n            return a + b;\n        }\n    }",
+            ""
+          ]
+        },
+        {
+          "timestamp": "2025-09-03T17:40:31.970537",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "public class StringUtils {\n    public boolean isPalindrome(String input) {\n        return false;\n    }\n}",
+            "public class StringUtils {\n        // your methods here\n    }",
+            "public class StringUtils {\n    public static boolean isPalindrome(String input) {\n        return false;\n    }\n}"
+          ]
+        },
+        {
+          "timestamp": "2025-09-03T17:40:39.708502",
+          "test_name": "StringUtilsTest",
+          "class_name": "StringUtils",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 3,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 3,
+          "passed_solutions": 1,
+          "pass_at_1": 0.0,
+          "pass_at_3": 0.3333333333333333,
+          "pass_rate": 0.3333333333333333,
+          "individual_results": [
+            false,
+            false,
+            true
+          ],
+          "solutions": [
+            "public class StringUtils {\n    public String reverseString(String input) {\n        return null;\n    }\n}",
+            "",
+            "public class StringUtils {\n    public static String reverseString(String input) {\n        if (input == null) return null;\n        if (input.isEmpty()) return input;\n        return new StringBuilder(input).reverse().toString();\n    }\n}"
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-09-03T17:46:29.049002",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 10,
+      "temperature": 0.8,
+      "rag_enabled": true,
+      "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+      "total_tests": 1,
+      "total_solutions": 10,
+      "total_passed": 0,
+      "overall_pass_rate": 0.0,
+      "test_results": [
+        {
+          "timestamp": "2025-09-03T17:46:29.048930",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 10,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 10,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_10": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "public class StringUtils {\n        public boolean isPalindrome(String input) {\n            return false;\n        }\n    }",
+            "public class StringUtils {\n    public static boolean isPalindrome(String input) {\n        return input.equals(input.toLowerCase().replace(\" \", \"\").replace(\",\", \"\").replace(\".\", \"\").reverse());\n    }\n}",
+            "",
+            "public class StringUtils {\n    public boolean isPalindrome(String input) {\n        return true;\n    }\n}",
+            "",
+            "public class StringUtils {\n    public boolean isPalindrome(String input) {\n        return false;\n    }\n}",
+            "public class StringUtils {\n        // your methods here\n    }",
+            "public class StringUtils {\n    public boolean isPalindrome(String input) {\n        return false;\n    }\n}",
+            "public class StringUtils {\n    public boolean isPalindrome(String input) {\n        return false;\n    }\n}",
+            "public class StringUtils {\n    public boolean isPalindrome(String input) {\n        return false;\n    }\n}"
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-09-03T19:06:00.164540",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 10,
+      "temperature": 0.8,
+      "rag_enabled": true,
+      "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+      "total_tests": 1,
+      "total_solutions": 10,
+      "total_passed": 0,
+      "overall_pass_rate": 0.0,
+      "test_results": [
+        {
+          "timestamp": "2025-09-03T19:06:00.164428",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 10,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 10,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_10": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-09-03T19:10:41.986544",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 10,
+      "temperature": 0.8,
+      "rag_enabled": true,
+      "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+      "total_tests": 1,
+      "total_solutions": 10,
+      "total_passed": 0,
+      "overall_pass_rate": 0.0,
+      "test_results": [
+        {
+          "timestamp": "2025-09-03T19:10:41.986477",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 10,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 10,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_10": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-09-03T19:14:36.327891",
+      "model_path": "../../outputs-full/checkpoint-110",
+      "k": 10,
+      "temperature": 0.8,
+      "rag_enabled": true,
+      "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+      "total_tests": 1,
+      "total_solutions": 10,
+      "total_passed": 0,
+      "overall_pass_rate": 0.0,
+      "test_results": [
+        {
+          "timestamp": "2025-09-03T19:14:36.327795",
+          "test_name": "PalindromeTest",
+          "class_name": "Palindrome",
+          "model_path": "../../outputs-full/checkpoint-110",
+          "k": 10,
+          "temperature": 0.8,
+          "rag_enabled": true,
+          "vector_db_path": "../../../../dataset-QA-prep/rag/vectordb/",
+          "total_solutions": 10,
+          "passed_solutions": 0,
+          "pass_at_1": 0.0,
+          "pass_at_10": 0.0,
+          "pass_rate": 0.0,
+          "individual_results": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "solutions": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ]
     }
   ],
   "summary": {
-    "total_runs": 15,
+    "total_runs": 20,
     "models_tested": [
       "../../outputs-full/checkpoint-110"
     ],

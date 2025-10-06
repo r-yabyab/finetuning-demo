@@ -8,9 +8,8 @@ import argparse
 from datetime import datetime
 import glob
 import chromadb
-from sentence_transformers import SentenceTransformer, CrossEncoder
+from sentence_transformers import SentenceTransformer
 import torch
-import re
 
 # specify test
 # python pass_k_eval_rag.py -t PalindromeTest
@@ -36,9 +35,6 @@ COLLECTION_NAME = "java_projects_extra_nometadata_leetcode_alone111"
 # Initialize embedding model for RAG
 # embed_model = SentenceTransformer('all-MiniLM-L6-v2')
 embed_model = SentenceTransformer('microsoft/unixcoder-base')
-
-# Initialize reranker for improved retrieval
-reranker = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
 
 
 def discover_test_pairs() -> Dict[str, Dict[str, str]]:
@@ -107,17 +103,17 @@ def get_test_info(test_name: str = None) -> List[Dict[str, str]]:
     list_available_tests()
     return list(test_pairs.values())
 
-def get_rag_context(query: str, top_k: int = 5, enable_rag: bool = True):
-    """Get relevant context from RAG database with prompt splitting and reranking"""
+def get_rag_context(query: str, top_k: int = 1, enable_rag: bool = True):
+    """Get relevant context from RAG database"""
     if not enable_rag:
         print("RAG is disabled")
-        return query
+        return ""
         
     try:
         # Check if vector database exists
         if not os.path.exists(VECTOR_DB_PATH):
             print(f"Vector database not found at: {VECTOR_DB_PATH}")
-            return query
+            return ""
         
         print(f"Loading vector database from: {VECTOR_DB_PATH}")
         
@@ -131,65 +127,29 @@ def get_rag_context(query: str, top_k: int = 5, enable_rag: bool = True):
         
         if collection_count == 0:
             print("Collection is empty - no RAG context available")
-            return query
+            return ""
         
-        # Split prompt into retrieval_prompt and rest_of_prompt
-        # Extract first sentence more robustly
-        first_sentence_match = re.match(r"^(.*?[\.!?])\s*(.*)", query, re.DOTALL)
-        if first_sentence_match:
-            retrieval_prompt = first_sentence_match.group(1).strip()
-            rest_of_prompt = first_sentence_match.group(2).strip()
-        else:
-            # fallback: if no punctuation found, split at first space after first few words
-            words = query.split()
-            if len(words) > 3:
-                retrieval_prompt = " ".join(words[:3])  # Use first 3 words for retrieval
-                rest_of_prompt = " ".join(words[3:])
-            else:
-                retrieval_prompt = query
-                rest_of_prompt = ""
-
-        print(f"Retrieval prompt: {retrieval_prompt}")
-        print(f"Rest of prompt: {rest_of_prompt[:100]}...")
-        
-        # Retrieve top-k results using retrieval_prompt
-        print(f"Querying for: {retrieval_prompt[:100]}...")
-        query_embedding = embed_model.encode([retrieval_prompt])
+        print(f"Querying for: {query[:100]}...")
+        query_embedding = embed_model.encode([query])
         results = collection.query(
             query_embeddings=query_embedding.tolist(),
             n_results=top_k
         )
         
         if results['documents'] and results['documents'][0]:
-            passages = results['documents'][0]
-            
-            # Rerank the retrieved passages
-            print(f"Reranking {len(passages)} passages...")
-            scores = reranker.predict([(retrieval_prompt, passage) for passage in passages])
-            
-            # Get the index of the highest scoring passage
-            best_idx = scores.argmax()
-            best_passage = passages[best_idx]
-            
-            print(f"\n--- Best RAG Context Retrieved (reranked from top {len(passages)}) ---")
-            print(best_passage[:500] + "..." if len(best_passage) > 500 else best_passage)
+            context = "\n".join(results['documents'][0])
+            print(f"\n--- RAG Context Retrieved (top {len(results['documents'][0])} results) ---")
+            print(context[:500] + "..." if len(context) > 500 else context)
             print("--- End RAG Context ---\n")
-            
-            # Combine: retrieved context + rest of prompt
-            if rest_of_prompt:
-                combined_prompt = f"{best_passage}\n\n{rest_of_prompt}"
-            else:
-                combined_prompt = best_passage
-            
-            return combined_prompt
+            return context
         else:
             print("Query returned no results")
-            return query
+            return ""
     except Exception as e:
         print(f"Error retrieving RAG context: {e}")
         import traceback
         traceback.print_exc()
-        return query
+        return ""
 
 def load_model_and_tokenizer():
     """Load the fine-tuned model and tokenizer"""
@@ -224,13 +184,18 @@ def read_prompt(prompt_file: str) -> str:
 
 def generate_solution(model, tokenizer, prompt: str, temperature: float = 0.8, enable_rag: bool = True) -> str:
     """Generate a single Java solution with RAG context"""
-    # Get RAG context with prompt splitting and reranking
-    # This now returns the combined prompt (context + rest of prompt) or original prompt if RAG disabled
-    final_prompt = get_rag_context(prompt, enable_rag=enable_rag)
+    # Get RAG context
+    context = get_rag_context(prompt, enable_rag=enable_rag)
+    
+    # Create full prompt with context if available
+    if context:
+        full_prompt = f"Context:\n{context}\n\nTask:\n{prompt}"
+    else:
+        full_prompt = prompt
     
     messages = [{
         "role": "user",
-        "content": final_prompt
+        "content": full_prompt
     }]
     
     inputs = tokenizer.apply_chat_template(
@@ -253,9 +218,6 @@ def generate_solution(model, tokenizer, prompt: str, temperature: float = 0.8, e
     
     generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
     prompt_text = tokenizer.decode(inputs[0], skip_special_tokens=True)
-    assistant_response = generated_text[len(prompt_text):].strip()
-    
-    return assistant_response
     assistant_response = generated_text[len(prompt_text):].strip()
     
     return assistant_response
